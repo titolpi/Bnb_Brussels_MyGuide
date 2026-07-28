@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gare du Midi Guest Wiki</title>
+    <!-- Tailwind CSS for mobile-first app design -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen pb-12">
+
+    <!-- Header / Brussels Welcome Banner -->
+    <div class="bg-teal-600 text-white px-6 pt-12 pb-10 rounded-b-3xl shadow-lg text-center border-b-4 border-teal-700">
+        <h1 class="text-3xl font-extrabold tracking-tight">Bienvenue à Bruxelles! 🇧🇪</h1>
+        <p class="text-teal-100 mt-2 text-sm font-medium">Your interactive guide near Gare du Midi. Tap any section below to open.</p>
+    </div>
+
+    <!-- MAIN APP WRAPPER -->
+    <div class="max-w-md mx-auto px-4 mt-6 space-y-4">
+
+        <!-- 1. WI-FI CARD (Always visible) -->
+        <div class="bg-white p-5 rounded-2xl shadow-xs border border-slate-100">
+            <div class="flex items-center space-x-3 mb-3">
+                <span class="text-2xl">📶</span>
+                <h2 class="text-lg font-bold text-slate-950">Fast & Free Wi-Fi</h2>
+            </div>
+            <div class="bg-slate-100/60 p-4 rounded-xl space-y-2 border border-slate-100">
+                <p class="text-sm flex justify-between items-center">
+                    <span class="font-bold text-slate-600">Network:</span> 
+                    <span class="font-mono text-base font-bold text-slate-950">Petibon</span>
+                </p>
+                <p class="text-sm flex justify-between items-center">
+                    <span class="font-bold text-slate-600">Password:</span> 
+                    <span class="font-mono text-base font-bold text-slate-950">Petibon1987!</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. STEP-BY-STEP CHECK-IN GUIDE -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🗺️</span>
+                    <span>Getting Inside (Check-In)</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-2 border-t border-slate-50 space-y-6 text-sm text-slate-600">
+                
+                <!-- Step 1 -->
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 1</span>
+                    <p class="font-medium text-slate-900 mb-2">You have reached the destination at number 80A.</p>
+                    <img src="01_Arriving_MainDoor.jpg" alt="Main Door 80A" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
+                </div>
+
+                <!-- Step 2 -->
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 2</span>
+                    <p class="font-medium text-slate-900 mb-2">If I am around, ring the buzzer <span class="font-bold text-blue-600">circled in blue</span> (Olivier Pirard / Bayane). Otherwise, the flat buzzer is <span class="font-bold text-amber-600">in yellow</span> (DAVID DRESE).</p>
+                    <img src="02_Buzzer_Instructions.jpg" alt="Buzzer Instructions" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
+                </div>
+
+                <!-- Step 3 -->
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 3</span>
+                    <p class="font-medium text-slate-900 mb-2">If I am not meeting you, find your keys in the secure safebox on the wall. Code: <strong class="text-slate-950">5291</strong>.</p>
+                    <div class="bg-amber-50 border border-amber-200 text-amber-950 p-3 rounded-xl font-medium text-xs my-2">
+                        🔑 <span class="font-bold">Key Guide:</span> The <span class="font-bold">small key</span> opens the main black gate on the street. The <span class="font-bold">bigger key</span> is for the flat door.
+                    </div>
+                    <img src="03_Safebox with keys.jpg" alt="Safebox Location" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
+                </div>
+
+                <!-- Step 4 -->
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 4</span>
+                    <p class="font-medium text-slate-900 mb-2">Pass through the main street gate, enter the courtyard area, and follow the direction of the arrow.</p>
+                    <img src="04_Getting To The Flat part1.jpg" alt="Courtyard Path" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
+                </div>
+
+                <!-- Step 5 -->
+                <div class="pb-2">
+                    <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 5</span>
+                    <p class="font-medium text-slate-900 mb-2">Head right down the short steps to reach your private entrance. The door might already be unlocked when you arrive.</p>
+                    <img src="05_GettingTo the flat part2.jpg" alt="Flat Entrance Steps" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
+                </div>
+
+            </div>
+        </details>
+
+        <!-- 3. HOUSE RULES -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">📜</span>
+                    <span>House Rules</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600 leading-relaxed">
+                <ul class="list-disc list-inside space-y-1 text-xs">
+                    <li>Strictly <span class="font-bold">no smoking inside</span> the flat.</li>
+                    <li>If smoking outside, please ensure the flat doors are closed so smoke and smells do not enter.</li>
+                    <li>Please keep noise to a minimum, especially outside in the courtyard <span class="font-bold">after 10 PM</span>, for the neighbours.</li>
+                    <li>Remember to lock the main black gate at street level with the key <span class="font-bold">after 8 PM</span>.</li>
+                </ul>
+            </div>
+        </details>
+
+        <!-- 4. PLANET-FRIENDLY THERMOSTAT GUIDE -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🌡️</span>
+                    <span>Heating & Thermostat</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600">
+                <p class="leading-relaxed">You have full access to the thermostat to adjust the heating. It is usually set between 18.5°C and 19°C upon arrival.</p>
+                
+                <div class="bg-emerald-50 border border-emerald-200 text-emerald-900 p-3 rounded-xl text-xs font-medium">
+                    🌱 <span class="font-bold">Help us stay Planet-Friendly:</span> Keep the device on <strong class="underline">manual settings</strong> and please try not to exceed <span class="font-bold">22°C</span>.
+                </div>
+
+                <p class="font-semibold text-slate-900 pt-1">How to change the temperature:</p>
+                <ol class="list-decimal list-inside space-y-1 text-xs pl-1">
+                    <li>Confirm that "man" is displayed on the screen.</li>
+                    <li>Rotate the center wheel dial to your desired temperature.</li>
+                    <li><span class="font-bold">Press the center wheel inward</span> to confirm.</li>
+                </ol>
+
+                <img src="07_Thermostat instructions.jpg" alt="Thermostat Guide" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 mt-3 cursor-pointer hover:opacity-95 transition-opacity">
+            </div>
+        </details>
+
+        <!-- 5. CLOSING & LOCKING THE DOOR -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🔒</span>
+                    <span>How to Close & Lock the Door</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600">
+                <p class="leading-relaxed">To properly close the main glass sliding door before locking it:</p>
+                <ol class="list-decimal list-inside space-y-2 text-xs bg-slate-50 border border-slate-100 p-3 rounded-xl">
+                    <li>First, pull the handle <span class="font-bold">entirely down</span> and slide the door shut.</li>
+                    <li>Then, lift the handle <span class="font-bold">completely back up</span> while continuing to pull the door towards you.</li>
+                    <li>You should hear a light <strong class="text-slate-950">"clic"</strong>. This means the door is sealed and properly closed.</li>
+                </ol>
+                <p>Once you hear the click, feel free to lock it securely with the key.</p>
+                <img src="06_Closing The main door instructions.jpg" alt="Door Handle Guide" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 mt-2 cursor-pointer hover:opacity-95 transition-opacity">
+            </div>
+        </details>
+
+        <!-- 6. DEHUMIDIFIER GUIDE -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">💧</span>
+                    <span>Dehumidifier Control</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600 leading-relaxed">
+                <p>The Comfee dehumidifier automatically runs to optimize moisture levels. If the fan noise disturbs you, feel free to turn it off; it saves its settings when powered back on.</p>
+                <div class="bg-amber-50 border border-amber-200 text-amber-900 p-3 rounded-xl font-medium text-xs">
+                    🚨 <span class="font-bold">Tank Full:</span> If the tank is full, it shuts down and displays a red light.
+                </div>
+                <p><span class="font-bold">To empty it:</span> Pull the container out from the bottom, empty the water in the sink, and slide it firmly back into place.</p>
+                <img src="dehumidifier.jpeg" alt="Dehumidifier Graphic Guide" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 mt-2 cursor-pointer hover:opacity-95 transition-opacity">
+            </div>
+        </details>
+
+        <!-- 7. WASTE & RECYCLING BINS -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🗑️</span>
+                    <span>Sorting the Bins</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600">
+                <p>Please sort waste carefully using the colored bins:</p>
+                <div class="space-y-2">
+                    <div class="flex items-center space-x-3 p-2 bg-amber-50 rounded-xl border border-amber-100">
+                        <span class="w-4 h-4 rounded-full bg-yellow-400 block shrink-0"></span>
+                        <p class="text-xs"><span class="font-bold">Yellow Bin:</span> Paper and cardboard.</p>
+                    </div>
+                    <div class="flex items-center space-x-3 p-2 bg-blue-50 rounded-xl border border-blue-100">
+                        <span class="w-4 h-4 rounded-full bg-blue-500 block shrink-0"></span>
+                        <p class="text-xs"><span class="font-bold">Blue Bin:</span> Plastics, metal packaging, and tetrapack cartons.</p>
+                    </div>
+                    <div class="flex items-center space-x-3 p-2 bg-slate-100 rounded-xl border border-slate-200">
+                        <span class="w-4 h-4 rounded-full bg-white border border-slate-400 block shrink-0"></span>
+                        <p class="text-xs"><span class="font-bold">White Bin:</span> General trash / Residual waste.</p>
+                    </div>
+                    <div class="flex items-center space-x-3 p-2 bg-emerald-50 rounded-xl border border-emerald-100">
+                        <span class="w-4 h-4 rounded-full bg-slate-900 block shrink-0"></span>
+                        <p class="text-xs"><span class="font-bold">Glass (Black Basket):</span> Clean empty glass bottles and jars.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 p-3 rounded-xl space-y-2 border border-slate-100 text-xs mt-3">
+                    <p>🚨 <span class="font-bold">When Bins Are Full:</span> Tie the bag closed and place it by the flat entrance. We need to take them to street level on specific collection days.</p>
+                    <p>➕ Extra bin bags are located in the drawer directly above the bins.</p>
+                </div>
+            </div>
+        </details>
+
+        <!-- 8. KITCHEN / DISHWASHER -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🍽️</span>
+                    <span>Kitchen & Dishwasher</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 border-t border-slate-50 text-sm text-slate-600 space-y-2">
+                <p class="leading-relaxed">Dishwasher tablets and liquid detergent are stored under the kitchen counter sink.</p>
+                <p>➕ Please don't hesitate to refill the liquid detergent dispenser upon your arrival.</p>
+            </div>
+        </details>
+
+        <!-- 9. CHECK-OUT CHECKLIST -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🛫</span>
+                    <span>Check-Out Steps</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600">
+                <p>Standard check-out is at <span class="font-bold">11:00 AM</span>. Before you leave, please fulfill these requests:</p>
+                <ul class="space-y-2 text-xs font-medium bg-rose-50/50 border border-rose-100 p-4 rounded-xl text-slate-700">
+                    <li class="flex items-start space-x-2"><span>🌡️</span><span>Turn the heating down to <span class="font-bold">18°C</span>.</span></li>
+                    <li class="flex items-start space-x-2"><span>🧼</span><span>Tidy the flat as much as possible, leaving <span class="font-bold">no dirty dishes</span>.</span></li>
+                    <li class="flex items-start space-x-2"><span>🛁</span><span>Place all used <span class="font-bold">towels in the bathtub</span>.</span></li>
+                    <li class="flex items-start space-x-2"><span>🔒</span><span>Lock the flat door and return the keys to the safebox outside.</span></li>
+                </ul>
+                <p class="text-xs pt-2">Thank you for taking care of our place! Safe travels! 👋</p>
+            </div>
+        </details>
+
+    </div>
+
+    <!-- FLOATING FULL-SCREEN LIGHTBOX OVERLAY -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xs hidden flex flex-col items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
+        
+        <!-- Close Button (Top Right) -->
+        <button onclick="closeModal()" class="absolute top-5 right-5 text-white bg-slate-800/80 hover:bg-slate-700 w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shadow-lg border border-white/20">
+            ✕
+        </button>
+
+        <!-- Uncropped Full Scale Image Container -->
+        <div class="relative max-w-full max-h-[85vh] flex flex-col items-center justify-center pointer-events-none">
+            <img id="modalImage" src="" alt="Enlarged view" class="max-w-[92vw] max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/10">
+            <p class="text-slate-300 text-xs mt-4 bg-slate-900/80 px-4 py-2 rounded-full border border-slate-700/60 shadow-lg pointer-events-auto">
+                Tap anywhere to close
+            </p>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX OVERLAY SCRIPT -->
+    <script>
+        function openModal(imageElement) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modalImg.src = imageElement.src;
+            modalImg.alt = imageElement.alt;
+            
+            modal.classList.remove('hidden');
+            // Freeze page scroll behind the image
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            // Unfreeze page scroll
+            document.body.style.overflow = '';
+        }
+    </script>
+
+</body>
+</html>
