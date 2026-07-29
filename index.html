@@ -9,14 +9,43 @@
     <style>
         body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
         summary::-webkit-details-marker { display: none; }
+        .lang-btn.active {
+            background-color: rgba(255, 255, 255, 0.25);
+            border-color: #ffffff;
+            font-weight: 800;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased min-h-screen pb-12">
 
+    <!-- TOP LANGUAGE SELECTOR BAR -->
+    <div class="bg-teal-800 text-white py-2.5 px-4 sticky top-0 z-40 shadow-md">
+        <div class="max-w-md mx-auto flex items-center justify-between text-xs font-semibold">
+            <span class="text-teal-200 uppercase tracking-wider text-[10px]">Language:</span>
+            <div class="flex items-center space-x-1.5">
+                <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                    <span>🇬🇧</span> <span>EN</span>
+                </button>
+                <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                    <span>🇫🇷</span> <span>FR</span>
+                </button>
+                <button onclick="setLanguage('es')" id="btn-es" class="lang-btn px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                    <span>🇪🇸</span> <span>ES</span>
+                </button>
+                <button onclick="setLanguage('nl')" id="btn-nl" class="lang-btn px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                    <span>🇳🇱</span> <span>NL</span>
+                </button>
+                <button onclick="setLanguage('pt')" id="btn-pt" class="lang-btn px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                    <span>🇵🇹</span> <span>PT</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Header / Brussels Welcome Banner -->
-    <div class="bg-teal-600 text-white px-6 pt-12 pb-10 rounded-b-3xl shadow-lg text-center border-b-4 border-teal-700">
-        <h1 class="text-3xl font-extrabold tracking-tight">Bienvenue à Bruxelles! 🇧🇪</h1>
-        <p class="text-teal-100 mt-2 text-sm font-medium">Your interactive guide near Gare du Midi. Tap any section below to open.</p>
+    <div class="bg-teal-600 text-white px-6 pt-8 pb-10 rounded-b-3xl shadow-lg text-center border-b-4 border-teal-700">
+        <h1 class="text-3xl font-extrabold tracking-tight" data-i18n="welcome_title">Bienvenue à Bruxelles! 🇧🇪</h1>
+        <p class="text-teal-100 mt-2 text-sm font-medium" data-i18n="welcome_sub">Your interactive guide near Gare du Midi. Tap any section below to open.</p>
     </div>
 
     <!-- MAIN APP WRAPPER -->
@@ -26,17 +55,20 @@
         <div class="bg-white p-5 rounded-2xl shadow-xs border border-slate-100">
             <div class="flex items-center space-x-3 mb-3">
                 <span class="text-2xl">📶</span>
-                <h2 class="text-lg font-bold text-slate-950">Fast & Free Wi-Fi</h2>
+                <h2 class="text-lg font-bold text-slate-950" data-i18n="wifi_title">Fast & Free Wi-Fi</h2>
             </div>
-            <div class="bg-slate-100/60 p-4 rounded-xl space-y-2 border border-slate-100">
-                <p class="text-sm flex justify-between items-center">
-                    <span class="font-bold text-slate-600">Network:</span> 
-                    <span class="font-mono text-base font-bold text-slate-950">Petibon</span>
-                </p>
-                <p class="text-sm flex justify-between items-center">
-                    <span class="font-bold text-slate-600">Password:</span> 
-                    <span class="font-mono text-base font-bold text-slate-950">Petibon1987!</span>
-                </p>
+            <div class="bg-slate-100/60 p-4 rounded-xl space-y-2 border border-slate-100 text-xs">
+                <div class="flex justify-between items-start">
+                    <span class="font-bold text-slate-600" data-i18n="wifi_networks">Networks:</span> 
+                    <div class="text-right font-mono font-bold text-slate-950">
+                        <div>Petibon_2GEXT</div>
+                        <div>Petibon_5G_5GEXT</div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center pt-1 border-t border-slate-200/60">
+                    <span class="font-bold text-slate-600" data-i18n="wifi_password">Password:</span> 
+                    <span class="font-mono text-sm font-bold text-teal-700 bg-teal-50 px-2 py-0.5 rounded border border-teal-200">Petibon1987</span>
+                </div>
             </div>
         </div>
 
@@ -45,7 +77,7 @@
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
                     <span class="text-2xl">🗺️</span>
-                    <span>Getting Inside (Check-In)</span>
+                    <span data-i18n="checkin_title">Getting Inside (Check-In)</span>
                 </div>
                 <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
             </summary>
@@ -54,23 +86,23 @@
                 <!-- Step 1 -->
                 <div class="border-b border-slate-100 pb-4">
                     <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 1</span>
-                    <p class="font-medium text-slate-900 mb-2">You have reached the destination at number 80A.</p>
+                    <p class="font-medium text-slate-900 mb-2" data-i18n="step1_text">You have reached the destination at number 80A.</p>
                     <img src="01_Arriving_MainDoor.jpg" alt="Main Door 80A" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
                 </div>
 
                 <!-- Step 2 -->
                 <div class="border-b border-slate-100 pb-4">
                     <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 2</span>
-                    <p class="font-medium text-slate-900 mb-2">If I am around, ring the buzzer <span class="font-bold text-blue-600">circled in blue</span> (Olivier Pirard / Bayane). Otherwise, the flat buzzer is <span class="font-bold text-amber-600">in yellow</span> (DAVID DRESE).</p>
+                    <p class="font-medium text-slate-900 mb-2" data-i18n="step2_text">If I am around, ring the buzzer circled in blue (Olivier Pirard / Bayane). Otherwise, the flat buzzer is in yellow (DAVID DRESE).</p>
                     <img src="02_Buzzer_Instructions.jpg" alt="Buzzer Instructions" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
                 </div>
 
                 <!-- Step 3 -->
                 <div class="border-b border-slate-100 pb-4">
                     <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 3</span>
-                    <p class="font-medium text-slate-900 mb-2">If I am not meeting you, find your keys in the secure safebox on the wall. Code: <strong class="text-slate-950">5291</strong>.</p>
-                    <div class="bg-amber-50 border border-amber-200 text-amber-950 p-3 rounded-xl font-medium text-xs my-2">
-                        🔑 <span class="font-bold">Key Guide:</span> The <span class="font-bold">small key</span> opens the main black gate on the street. The <span class="font-bold">bigger key</span> is for the flat door.
+                    <p class="font-medium text-slate-900 mb-2" data-i18n="step3_text">If I am not meeting you, find your keys in the secure safebox on the wall. Code: <strong>5291</strong>.</p>
+                    <div class="bg-amber-50 border border-amber-200 text-amber-950 p-3 rounded-xl font-medium text-xs my-2" data-i18n="key_guide">
+                        🔑 <strong>Key Guide:</strong> Small key opens main black gate on street. Bigger key is for flat door.
                     </div>
                     <img src="03_Safebox with keys.jpg" alt="Safebox Location" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
                 </div>
@@ -78,14 +110,14 @@
                 <!-- Step 4 -->
                 <div class="border-b border-slate-100 pb-4">
                     <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 4</span>
-                    <p class="font-medium text-slate-900 mb-2">Pass through the main street gate, enter the courtyard area, and follow the direction of the arrow.</p>
+                    <p class="font-medium text-slate-900 mb-2" data-i18n="step4_text">Pass through main street gate, enter courtyard area, and follow arrow direction.</p>
                     <img src="04_Getting To The Flat part1.jpg" alt="Courtyard Path" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
                 </div>
 
                 <!-- Step 5 -->
                 <div class="pb-2">
                     <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-0.5 rounded-sm mb-2">STEP 5</span>
-                    <p class="font-medium text-slate-900 mb-2">Head right down the short steps to reach your private entrance. The door might already be unlocked when you arrive.</p>
+                    <p class="font-medium text-slate-900 mb-2" data-i18n="step5_text">Head right down short steps to reach private entrance. Door might be unlocked upon arrival.</p>
                     <img src="05_GettingTo the flat part2.jpg" alt="Flat Entrance Steps" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 cursor-pointer hover:opacity-95 transition-opacity">
                 </div>
 
@@ -97,156 +129,257 @@
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
                     <span class="text-2xl">📜</span>
-                    <span>House Rules</span>
+                    <span data-i18n="rules_title">House Rules & Logistics</span>
                 </div>
                 <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
             </summary>
             <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600 leading-relaxed">
-                <ul class="list-disc list-inside space-y-1 text-xs">
-                    <li>Strictly <span class="font-bold">no smoking inside</span> the flat.</li>
-                    <li>If smoking outside, please ensure the flat doors are closed so smoke and smells do not enter.</li>
-                    <li>Please keep noise to a minimum, especially outside in the courtyard <span class="font-bold">after 10 PM</span>, for the neighbours.</li>
-                    <li>Remember to lock the main black gate at street level with the key <span class="font-bold">after 8 PM</span>.</li>
+                <ul class="list-disc list-inside space-y-2 text-xs">
+                    <li data-i18n="rule_checkout"><strong>Check-out:</strong> Standard check-out is at <strong>12:00 PM (Noon)</strong>.</li>
+                    <li data-i18n="rule_gate"><strong>Gate Security:</strong> Lock main street gate with key <strong>after 8:00 PM</strong>.</li>
+                    <li data-i18n="rule_nosmoking">Strictly <strong>no smoking inside</strong> flat. Close doors if smoking outside.</li>
+                    <li data-i18n="rule_noise">Keep noise to a minimum, especially in courtyard <strong>after 10 PM</strong>.</li>
                 </ul>
             </div>
         </details>
 
-        <!-- 4. PLANET-FRIENDLY THERMOSTAT GUIDE -->
+        <!-- 4. LOCAL TIPS & SAVED MAPS -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">📍</span>
+                    <span data-i18n="tips_title">Local Tips & Saved Maps</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-3 border-t border-slate-50 space-y-3 text-xs">
+                <p class="text-slate-500 font-medium" data-i18n="tips_sub">Tap any list below to open directly in Google Maps:</p>
+                
+                <a href="https://maps.app.goo.gl/ykrNaYwMyrRk6yWM6" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 font-bold text-slate-800 hover:bg-teal-50 hover:border-teal-300 transition-all">
+                    <span>🏛️ BRU - Sightseeing & To Do</span>
+                    <span class="text-teal-600">Open ↗</span>
+                </a>
+
+                <a href="https://maps.app.goo.gl/6z3hAFDBAxQp49oG7" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 font-bold text-slate-800 hover:bg-teal-50 hover:border-teal-300 transition-all">
+                    <span>☕ BRU - Café & Restaurants</span>
+                    <span class="text-teal-600">Open ↗</span>
+                </a>
+
+                <div class="space-y-1">
+                    <a href="https://maps.app.goo.gl/wgDDJza7jqoixxbj6" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 font-bold text-slate-800 hover:bg-teal-50 hover:border-teal-300 transition-all">
+                        <span>🇧🇪 BRU - Belgian Restaurants</span>
+                        <span class="text-teal-600">Open ↗</span>
+                    </a>
+                    <div class="bg-amber-50 border border-amber-200 p-3 rounded-xl text-slate-700 leading-relaxed text-[11px] mt-1">
+                        ⭐ <strong data-i18n="findesiecle_title">Favorite Restaurant: Fin de Siècle</strong><br>
+                        <span data-i18n="findesiecle_text">Rue des Chartreux in center. No advance bookings, queue moves fast (10-30 min wait max). Friendly staff. Great goat cheese salad for vegetarians!</span>
+                    </div>
+                </div>
+
+                <a href="https://maps.app.goo.gl/kfxoENQgg614tL4K8" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 font-bold text-slate-800 hover:bg-teal-50 hover:border-teal-300 transition-all">
+                    <span>🧇 BRU - Waffles, Ice Cream & Sweets</span>
+                    <span class="text-teal-600">Open ↗</span>
+                </a>
+
+                <a href="https://maps.app.goo.gl/V7sdVZ12GKEkcr4o8" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 font-bold text-slate-800 hover:bg-teal-50 hover:border-teal-300 transition-all">
+                    <span>🍻 BRU - Bars & Nightlife</span>
+                    <span class="text-teal-600">Open ↗</span>
+                </a>
+
+                <a href="https://maps.app.goo.gl/qG9y3gt5cqShvUAJA" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 font-bold text-slate-800 hover:bg-teal-50 hover:border-teal-300 transition-all">
+                    <span>🎈 BRU - Kids Friendly Activities</span>
+                    <span class="text-teal-600">Open ↗</span>
+                </a>
+
+                <div class="space-y-1">
+                    <a href="https://maps.app.goo.gl/kcWpo9osAnvxmcR76" target="_blank" class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 font-bold text-slate-800 hover:bg-teal-50 hover:border-teal-300 transition-all">
+                        <span>🛒 BRU - Supermarkets & Markets</span>
+                        <span class="text-teal-600">Open ↗</span>
+                    </a>
+                    <div class="bg-slate-100 p-3 rounded-xl text-slate-700 space-y-1.5 text-[11px] border border-slate-200 mt-1">
+                        <div>🛒 <strong><a href="https://maps.app.goo.gl/7bjh3J9ko2K7gUDA8" target="_blank" class="underline text-teal-700">OkayCity Supermarket</a>:</strong> <span data-i18n="okaycity_text">Highly recommended nearby for great prices and quality products.</span></div>
+                        <div>🛍️ <strong><a href="https://www.visit.brussels/fr/visiteurs/venue-details.Marche-du-Midi.266060" target="_blank" class="underline text-teal-700">Marché du Midi</a>:</strong> <span data-i18n="marchemidi_text">Huge open-air market around Gare du Midi (Every Sunday until 2:00 PM).</span></div>
+                        <div>📻 <strong><a href="https://marches.bruxelles.be/marches/marche-aux-puces-du-jeu-de-balle" target="_blank" class="underline text-teal-700">Marché aux Puces</a>:</strong> <span data-i18n="fleamarket_text">Daily vintage flea market at Place du Jeu de Balle.</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </details>
+
+        <!-- 5. GETTING AROUND & TRANSPORT -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🚆</span>
+                    <span data-i18n="transport_title">Getting Around & Trains</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-3 border-t border-slate-50 space-y-4 text-xs text-slate-600">
+                
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm mb-1" data-i18n="city_transport_head">Local City Transport</h3>
+                    <p class="leading-relaxed" data-i18n="city_transport_body">
+                        • <strong>Walking:</strong> Easy 15-minute walk to city center.<br>
+                        • <strong>Tram:</strong> <strong>Lemonnier stop</strong> is 400m away (a few steps, no lifts). Direct 2 stops to center.<br>
+                        • <strong>Payment:</strong> Tap your bank card directly at validators (automatically caps daily rate). For MOBIB cards, buy at Gare du Midi KIOSK (-1 level).
+                    </p>
+                </div>
+
+                <div class="border-t border-slate-100 pt-3">
+                    <h3 class="font-bold text-slate-900 text-sm mb-1" data-i18n="train_travel_head">Train Day Trips (SNCB)</h3>
+                    <p class="leading-relaxed mb-2" data-i18n="train_travel_body">
+                        Buy tickets via <a href="https://www.belgiantrain.be/" target="_blank" class="text-teal-700 underline font-bold">SNCB website</a> or the SNCB app (<a href="https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215" target="_blank" class="text-teal-700 underline font-bold">iOS App Store</a> / <a href="https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp" target="_blank" class="text-teal-700 underline font-bold">Android Play Store</a>). Weekend return tickets are cheaper! Watch out for IC (express) vs L (slow local) trains.
+                    </p>
+
+                    <p class="font-bold text-slate-900 mb-1" data-i18n="train_times_head">Direct train times from Gare du Midi:</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <div class="bg-slate-100 p-2 rounded-lg"><strong>Ghent (Gent)</strong> ~30 mins</div>
+                        <div class="bg-slate-100 p-2 rounded-lg"><strong>Antwerp</strong> ~40-50 mins</div>
+                        <div class="bg-slate-100 p-2 rounded-lg"><strong>Bruges (Brugge)</strong> ~55-60 mins</div>
+                        <div class="bg-slate-100 p-2 rounded-lg"><strong>Leuven</strong> ~25-30 mins</div>
+                        <div class="bg-slate-100 p-2 rounded-lg"><strong>Mechelen</strong> ~20-25 mins</div>
+                        <div class="bg-slate-100 p-2 rounded-lg"><strong>Namur</strong> ~1 hour</div>
+                        <div class="bg-slate-100 p-2 rounded-lg col-span-2"><strong>Dinant</strong> ~1 hour 30 mins</div>
+                    </div>
+                </div>
+
+            </div>
+        </details>
+
+        <!-- 6. THERMOSTAT GUIDE -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
                     <span class="text-2xl">🌡️</span>
-                    <span>Heating & Thermostat</span>
+                    <span data-i18n="thermostat_title">Heating & Thermostat</span>
                 </div>
                 <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
             </summary>
             <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600">
-                <p class="leading-relaxed">You have full access to the thermostat to adjust the heating. It is usually set between 18.5°C and 19°C upon arrival.</p>
+                <p class="leading-relaxed" data-i18n="thermostat_intro">You have full access to adjust heating. Set between 18.5°C and 19°C upon arrival.</p>
                 
-                <div class="bg-emerald-50 border border-emerald-200 text-emerald-900 p-3 rounded-xl text-xs font-medium">
-                    🌱 <span class="font-bold">Help us stay Planet-Friendly:</span> Keep the device on <strong class="underline">manual settings</strong> and please try not to exceed <span class="font-bold">22°C</span>.
+                <div class="bg-emerald-50 border border-emerald-200 text-emerald-900 p-3 rounded-xl text-xs font-medium" data-i18n="thermostat_eco">
+                    🌱 <strong>Planet-Friendly:</strong> Keep on manual settings and please try not to exceed <strong>22°C</strong>.
                 </div>
 
-                <p class="font-semibold text-slate-900 pt-1">How to change the temperature:</p>
-                <ol class="list-decimal list-inside space-y-1 text-xs pl-1">
-                    <li>Confirm that "man" is displayed on the screen.</li>
-                    <li>Rotate the center wheel dial to your desired temperature.</li>
-                    <li><span class="font-bold">Press the center wheel inward</span> to confirm.</li>
+                <p class="font-semibold text-slate-900 pt-1 text-xs" data-i18n="thermostat_how">How to change temperature:</p>
+                <ol class="list-decimal list-inside space-y-1 text-xs pl-1" data-i18n="thermostat_steps">
+                    <li>Confirm "man" is displayed on screen.</li>
+                    <li>Rotate center wheel dial to desired temperature.</li>
+                    <li>Press center wheel inward to confirm.</li>
                 </ol>
 
                 <img src="07_Thermostat instructions.jpg" alt="Thermostat Guide" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 mt-3 cursor-pointer hover:opacity-95 transition-opacity">
             </div>
         </details>
 
-        <!-- 5. CLOSING & LOCKING THE DOOR -->
+        <!-- 7. CLOSING & LOCKING DOOR -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
                     <span class="text-2xl">🔒</span>
-                    <span>How to Close & Lock the Door</span>
+                    <span data-i18n="door_title">Closing & Locking Flat Door</span>
                 </div>
                 <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
             </summary>
             <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600">
-                <p class="leading-relaxed">To properly close the main glass sliding door before locking it:</p>
-                <ol class="list-decimal list-inside space-y-2 text-xs bg-slate-50 border border-slate-100 p-3 rounded-xl">
-                    <li>First, pull the handle <span class="font-bold">entirely down</span> and slide the door shut.</li>
-                    <li>Then, lift the handle <span class="font-bold">completely back up</span> while continuing to pull the door towards you.</li>
-                    <li>You should hear a light <strong class="text-slate-950">"clic"</strong>. This means the door is sealed and properly closed.</li>
+                <p class="leading-relaxed text-xs" data-i18n="door_intro">To properly close main glass sliding door before locking:</p>
+                <ol class="list-decimal list-inside space-y-2 text-xs bg-slate-50 border border-slate-100 p-3 rounded-xl" data-i18n="door_steps">
+                    <li>Pull handle entirely down and slide door shut.</li>
+                    <li>Lift handle completely back up while pulling door towards you.</li>
+                    <li>Listen for a light <strong>"click"</strong> indicating door is sealed.</li>
                 </ol>
-                <p>Once you hear the click, feel free to lock it securely with the key.</p>
+                <p class="text-xs" data-i18n="door_outro">Once clicked, lock securely with key.</p>
                 <img src="06_Closing The main door instructions.jpg" alt="Door Handle Guide" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 mt-2 cursor-pointer hover:opacity-95 transition-opacity">
             </div>
         </details>
 
-        <!-- 6. DEHUMIDIFIER GUIDE -->
+        <!-- 8. DEHUMIDIFIER GUIDE -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
                     <span class="text-2xl">💧</span>
-                    <span>Dehumidifier Control</span>
+                    <span data-i18n="dehumidifier_title">Dehumidifier Control</span>
                 </div>
                 <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
             </summary>
-            <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600 leading-relaxed">
-                <p>The Comfee dehumidifier automatically runs to optimize moisture levels. If the fan noise disturbs you, feel free to turn it off; it saves its settings when powered back on.</p>
-                <div class="bg-amber-50 border border-amber-200 text-amber-900 p-3 rounded-xl font-medium text-xs">
-                    🚨 <span class="font-bold">Tank Full:</span> If the tank is full, it shuts down and displays a red light.
+            <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600 leading-relaxed text-xs">
+                <p data-i18n="dehumidifier_intro">Runs automatically. Feel free to turn off if fan noise bothers you; saves settings when powered back on.</p>
+                <div class="bg-amber-50 border border-amber-200 text-amber-900 p-3 rounded-xl font-medium" data-i18n="dehumidifier_alert">
+                    🚨 <strong>Tank Full:</strong> If full, it shuts down with a red light. Pull bottom container out, empty in sink, and slide firmly back in.
                 </div>
-                <p><span class="font-bold">To empty it:</span> Pull the container out from the bottom, empty the water in the sink, and slide it firmly back into place.</p>
-                <img src="dehumidifier.jpeg" alt="Dehumidifier Graphic Guide" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 mt-2 cursor-pointer hover:opacity-95 transition-opacity">
+                <img src="dehumidifier.jpeg" alt="Dehumidifier Guide" onclick="openModal(this)" class="w-full h-auto rounded-xl border border-slate-200 mt-2 cursor-pointer hover:opacity-95 transition-opacity">
             </div>
         </details>
 
-        <!-- 7. WASTE & RECYCLING BINS -->
+        <!-- 9. WASTE & RECYCLING BINS -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
                     <span class="text-2xl">🗑️</span>
-                    <span>Sorting the Bins</span>
+                    <span data-i18n="bins_title">Sorting Waste & Bins</span>
                 </div>
                 <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
             </summary>
             <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600">
-                <p>Please sort waste carefully using the colored bins:</p>
-                <div class="space-y-2">
+                <p class="text-xs" data-i18n="bins_intro">Please sort waste carefully using colored bins:</p>
+                <div class="space-y-2 text-xs">
                     <div class="flex items-center space-x-3 p-2 bg-amber-50 rounded-xl border border-amber-100">
                         <span class="w-4 h-4 rounded-full bg-yellow-400 block shrink-0"></span>
-                        <p class="text-xs"><span class="font-bold">Yellow Bin:</span> Paper and cardboard.</p>
+                        <p><strong data-i18n="bin_yellow">Yellow:</strong> Paper and cardboard.</p>
                     </div>
                     <div class="flex items-center space-x-3 p-2 bg-blue-50 rounded-xl border border-blue-100">
                         <span class="w-4 h-4 rounded-full bg-blue-500 block shrink-0"></span>
-                        <p class="text-xs"><span class="font-bold">Blue Bin:</span> Plastics, metal packaging, and tetrapack cartons.</p>
+                        <p><strong data-i18n="bin_blue">Blue:</strong> Plastics, metal packaging, and tetrapack cartons.</p>
                     </div>
                     <div class="flex items-center space-x-3 p-2 bg-slate-100 rounded-xl border border-slate-200">
                         <span class="w-4 h-4 rounded-full bg-white border border-slate-400 block shrink-0"></span>
-                        <p class="text-xs"><span class="font-bold">White Bin:</span> General trash / Residual waste.</p>
+                        <p><strong data-i18n="bin_white">White:</strong> General residual waste.</p>
                     </div>
                     <div class="flex items-center space-x-3 p-2 bg-emerald-50 rounded-xl border border-emerald-100">
                         <span class="w-4 h-4 rounded-full bg-slate-900 block shrink-0"></span>
-                        <p class="text-xs"><span class="font-bold">Glass (Black Basket):</span> Clean empty glass bottles and jars.</p>
+                        <p><strong data-i18n="bin_glass">Black Basket:</strong> Clean empty glass bottles/jars.</p>
                     </div>
                 </div>
-                <div class="bg-slate-100 p-3 rounded-xl space-y-2 border border-slate-100 text-xs mt-3">
-                    <p>🚨 <span class="font-bold">When Bins Are Full:</span> Tie the bag closed and place it by the flat entrance. We need to take them to street level on specific collection days.</p>
-                    <p>➕ Extra bin bags are located in the drawer directly above the bins.</p>
+                <div class="bg-slate-100 p-3 rounded-xl space-y-1 border border-slate-100 text-xs mt-3" data-i18n="bins_extra">
+                    🚨 Extra bin bags are stored in drawer above bins.
                 </div>
             </div>
         </details>
 
-        <!-- 8. KITCHEN / DISHWASHER -->
+        <!-- 10. KITCHEN / DISHWASHER -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
                     <span class="text-2xl">🍽️</span>
-                    <span>Kitchen & Dishwasher</span>
+                    <span data-i18n="kitchen_title">Kitchen & Dishwasher</span>
                 </div>
                 <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
             </summary>
-            <div class="px-5 pb-5 pt-1 border-t border-slate-50 text-sm text-slate-600 space-y-2">
-                <p class="leading-relaxed">Dishwasher tablets and liquid detergent are stored under the kitchen counter sink.</p>
-                <p>➕ Please don't hesitate to refill the liquid detergent dispenser upon your arrival.</p>
+            <div class="px-5 pb-5 pt-1 border-t border-slate-50 text-xs text-slate-600 space-y-2" data-i18n="kitchen_body">
+                Dishwasher tablets and liquid detergent are stored under the kitchen counter sink. Feel free to refill liquid detergent dispenser upon arrival!
             </div>
         </details>
 
-        <!-- 9. CHECK-OUT CHECKLIST -->
+        <!-- 11. CHECK-OUT CHECKLIST -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
                     <span class="text-2xl">🛫</span>
-                    <span>Check-Out Steps</span>
+                    <span data-i18n="checkout_title">Check-Out Steps</span>
                 </div>
                 <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
             </summary>
             <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600">
-                <p>Standard check-out is at <span class="font-bold">11:00 AM</span>. Before you leave, please fulfill these requests:</p>
-                <ul class="space-y-2 text-xs font-medium bg-rose-50/50 border border-rose-100 p-4 rounded-xl text-slate-700">
-                    <li class="flex items-start space-x-2"><span>🌡️</span><span>Turn the heating down to <span class="font-bold">18°C</span>.</span></li>
-                    <li class="flex items-start space-x-2"><span>🧼</span><span>Tidy the flat as much as possible, leaving <span class="font-bold">no dirty dishes</span>.</span></li>
-                    <li class="flex items-start space-x-2"><span>🛁</span><span>Place all used <span class="font-bold">towels in the bathtub</span>.</span></li>
-                    <li class="flex items-start space-x-2"><span>🔒</span><span>Lock the flat door and return the keys to the safebox outside.</span></li>
+                <p class="text-xs" data-i18n="checkout_intro">Check-out is at <strong>12:00 PM (Noon)</strong>. Before leaving, please:</p>
+                <ul class="space-y-2 text-xs font-medium bg-rose-50/50 border border-rose-100 p-4 rounded-xl text-slate-700" data-i18n="checkout_list">
+                    <li>🌡️ Set heating down to <strong>18°C</strong>.</li>
+                    <li>🧼 Leave no dirty dishes.</li>
+                    <li>🛁 Place used towels in bathtub.</li>
+                    <li>🔒 Lock flat door & return keys to wall safebox outside.</li>
                 </ul>
-                <p class="text-xs pt-2">Thank you for taking care of our place! Safe travels! 👋</p>
+                <p class="text-xs pt-2 font-semibold text-slate-900" data-i18n="checkout_thanks">Thank you for staying with us! Safe travels! 👋</p>
             </div>
         </details>
 
@@ -254,13 +387,9 @@
 
     <!-- FLOATING FULL-SCREEN LIGHTBOX OVERLAY -->
     <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xs hidden flex flex-col items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
-        
-        <!-- Close Button (Top Right) -->
         <button onclick="closeModal()" class="absolute top-5 right-5 text-white bg-slate-800/80 hover:bg-slate-700 w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shadow-lg border border-white/20">
             ✕
         </button>
-
-        <!-- Uncropped Full Scale Image Container -->
         <div class="relative max-w-full max-h-[85vh] flex flex-col items-center justify-center pointer-events-none">
             <img id="modalImage" src="" alt="Enlarged view" class="max-w-[92vw] max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/10">
             <p class="text-slate-300 text-xs mt-4 bg-slate-900/80 px-4 py-2 rounded-full border border-slate-700/60 shadow-lg pointer-events-auto">
@@ -269,26 +398,324 @@
         </div>
     </div>
 
-    <!-- LIGHTBOX OVERLAY SCRIPT -->
+    <!-- SCRIPT: LIGHTBOX & MULTI-LANGUAGE TRANSLATION DICTIONARY -->
     <script>
+        // Lightbox functions
         function openModal(imageElement) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
-            
             modalImg.src = imageElement.src;
             modalImg.alt = imageElement.alt;
-            
             modal.classList.remove('hidden');
-            // Freeze page scroll behind the image
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             const modal = document.getElementById('imageModal');
             modal.classList.add('hidden');
-            // Unfreeze page scroll
             document.body.style.overflow = '';
         }
+
+        // Multi-Language Translation Data
+        const translations = {
+            en: {
+                welcome_title: "Bienvenue à Bruxelles! 🇧🇪",
+                welcome_sub: "Your interactive guide near Gare du Midi. Tap any section below to open.",
+                wifi_title: "Fast & Free Wi-Fi",
+                wifi_networks: "Networks:",
+                wifi_password: "Password:",
+                checkin_title: "Getting Inside (Check-In)",
+                step1_text: "You have reached the destination at number 80A.",
+                step2_text: "If I am around, ring the buzzer circled in blue (Olivier Pirard / Bayane). Otherwise, the flat buzzer is in yellow (DAVID DRESE).",
+                step3_text: "If I am not meeting you, find your keys in the secure safebox on the wall. Code: <strong>5291</strong>.",
+                key_guide: "🔑 <strong>Key Guide:</strong> Small key opens main black gate on street. Bigger key is for flat door.",
+                step4_text: "Pass through main street gate, enter courtyard area, and follow arrow direction.",
+                step5_text: "Head right down short steps to reach private entrance. Door might be unlocked upon arrival.",
+                rules_title: "House Rules & Logistics",
+                rule_checkout: "<strong>Check-out:</strong> Standard check-out is at <strong>12:00 PM (Noon)</strong>.",
+                rule_gate: "<strong>Gate Security:</strong> Lock main street gate with key <strong>after 8:00 PM</strong>.",
+                rule_nosmoking: "Strictly <strong>no smoking inside</strong> flat. Close doors if smoking outside.",
+                rule_noise: "Keep noise to a minimum, especially in courtyard <strong>after 10 PM</strong>.",
+                tips_title: "Local Tips & Saved Maps",
+                tips_sub: "Tap any list below to open directly in Google Maps:",
+                findesiecle_title: "Favorite Restaurant: Fin de Siècle",
+                findesiecle_text: "Rue des Chartreux in center. No advance bookings, queue moves fast (10-30 min wait max). Great goat cheese salad for vegetarians!",
+                okaycity_text: "Highly recommended nearby for great prices and quality products.",
+                marchemidi_text: "Huge open-air market around Gare du Midi (Every Sunday until 2:00 PM).",
+                fleamarket_text: "Daily vintage flea market at Place du Jeu de Balle.",
+                transport_title: "Getting Around & Trains",
+                city_transport_head: "Local City Transport",
+                city_transport_body: "• <strong>Walking:</strong> Easy 15-min walk to city center.<br>• <strong>Tram:</strong> <strong>Lemonnier stop</strong> 400m away (steps, no lifts). Direct 2 stops to center.<br>• <strong>Payment:</strong> Tap bank card directly at validators. MOBIB cards available at Gare du Midi Kiosk (-1 level).",
+                train_travel_head: "Train Day Trips (SNCB)",
+                train_travel_body: "Buy tickets via <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>SNCB website</a> or the SNCB app (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). Weekend return tickets are cheaper! Watch out for IC (express) vs L (slow local) trains.",
+                train_times_head: "Direct train times from Gare du Midi:",
+                thermostat_title: "Heating & Thermostat",
+                thermostat_intro: "Full access to adjust heating. Set between 18.5°C and 19°C upon arrival.",
+                thermostat_eco: "🌱 <strong>Planet-Friendly:</strong> Keep on manual settings and please try not to exceed <strong>22°C</strong>.",
+                thermostat_how: "How to change temperature:",
+                thermostat_steps: "<li>Confirm 'man' is displayed on screen.</li><li>Rotate center wheel dial to desired temperature.</li><li>Press center wheel inward to confirm.</li>",
+                door_title: "Closing & Locking Flat Door",
+                door_intro: "To properly close main glass sliding door before locking:",
+                door_steps: "<li>Pull handle entirely down and slide door shut.</li><li>Lift handle completely back up while pulling door towards you.</li><li>Listen for a light <strong>'click'</strong> indicating door is sealed.</li>",
+                door_outro: "Once clicked, lock securely with key.",
+                dehumidifier_title: "Dehumidifier Control",
+                dehumidifier_intro: "Runs automatically. Feel free to turn off if fan noise bothers you; saves settings when powered back on.",
+                dehumidifier_alert: "🚨 <strong>Tank Full:</strong> If full, it shuts down with a red light. Pull bottom container out, empty in sink, and slide firmly back in.",
+                bins_title: "Sorting Waste & Bins",
+                bins_intro: "Please sort waste carefully using colored bins:",
+                bin_yellow: "Yellow:", bin_blue: "Blue:", bin_white: "White:", bin_glass: "Black Basket:",
+                bins_extra: "🚨 Extra bin bags are stored in drawer above bins.",
+                kitchen_title: "Kitchen & Dishwasher",
+                kitchen_body: "Dishwasher tablets and liquid detergent are stored under kitchen counter sink. Feel free to refill liquid detergent dispenser upon arrival!",
+                checkout_title: "Check-Out Steps",
+                checkout_intro: "Check-out is at <strong>12:00 PM (Noon)</strong>. Before leaving, please:",
+                checkout_list: "<li>🌡️ Set heating down to <strong>18°C</strong>.</li><li>🧼 Leave no dirty dishes.</li><li>🛁 Place used towels in bathtub.</li><li>🔒 Lock flat door & return keys to wall safebox outside.</li>",
+                checkout_thanks: "Thank you for staying with us! Safe travels! 👋"
+            },
+            fr: {
+                welcome_title: "Bienvenue à Bruxelles! 🇧🇪",
+                welcome_sub: "Votre guide interactif près de la Gare du Midi. Appuyez sur une section pour l'ouvrir.",
+                wifi_title: "Wi-Fi Gratuit & Rapide",
+                wifi_networks: "Réseaux:",
+                wifi_password: "Mot de passe:",
+                checkin_title: "Arrivée (Check-In)",
+                step1_text: "Vous êtes arrivé à destination au numéro 80A.",
+                step2_text: "Si je suis présent, sonnez à la sonnette entourée en bleu (Olivier Pirard / Bayane). Sinon, sonnez à l'appartement en jaune (DAVID DRESE).",
+                step3_text: "Si je ne suis pas là, prenez vos clés dans la boîte à clés murale. Code: <strong>5291</strong>.",
+                key_guide: "🔑 <strong>Clés:</strong> La petite clé ouvre la grande grille noire. La grande clé est pour la porte de l'appartement.",
+                step4_text: "Passez la grille principale, entrez dans la cour et suivez la flèche.",
+                step5_text: "Tournez à droite en descendant les petites marches. La porte est peut-être déjà déverrouillée.",
+                rules_title: "Règles de la Maison",
+                rule_checkout: "<strong>Départ:</strong> Le départ s'effectue à <strong>12:00 (Midi)</strong>.",
+                rule_gate: "<strong>Sécurité Grille:</strong> Fermez la grille principale à clé <strong>après 20:00</strong>.",
+                rule_nosmoking: "Strictement <strong>non-fumeur à l'intérieur</strong>. Fermez la porte si vous fumez dehors.",
+                rule_noise: "Réduisez le bruit dans la cour <strong>après 22:00</strong>.",
+                tips_title: "Conseils Locaux & Cartes",
+                tips_sub: "Cliquez sur une liste pour l'ouvrir dans Google Maps:",
+                findesiecle_title: "Restaurant Préféré: Fin de Siècle",
+                findesiecle_text: "Rue des Chartreux au centre. Pas de réservation, mais la file avance vite (10-30 min max). Délicieuse salade de chèvre chaud!",
+                okaycity_text: "Supermarché recommandé à proximité, très bons prix et produits de qualité.",
+                marchemidi_text: "Grand marché en plein air autour de la Gare du Midi (Chaque dimanche jusqu'à 14h00).",
+                fleamarket_text: "Marché aux puces quotidien Place du Jeu de Balle.",
+                transport_title: "Transports & Trains",
+                city_transport_head: "Transports en Ville",
+                city_transport_body: "• <strong>À pied:</strong> 15 min à pied du centre-ville.<br>• <strong>Tram:</strong> Station <strong>Lemonnier</strong> à 400m (quelques marches, sans ascenseur). 2 arrêts du centre.<br>• <strong>Paiement:</strong> Scannez votre carte bancaire directement. Carte MOBIB disponible au guichet Gare du Midi (-1).",
+                train_travel_head: "Excursions en Train (SNCB)",
+                train_travel_body: "Achetez vos billets sur le <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>site SNCB</a> ou via l'application SNCB (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). Billets week-end à prix réduit! Attention aux trains IC (rapides) vs L (lents).",
+                train_times_head: "Temps de trajet direct depuis Gare du Midi:",
+                thermostat_title: "Chauffage & Thermostat",
+                thermostat_intro: "Accès libre au thermostat. Réglé entre 18.5°C et 19°C à votre arrivée.",
+                thermostat_eco: "🌱 <strong>Éco-responsable:</strong> Restez en mode manuel et évitez de dépasser <strong>22°C</strong>.",
+                thermostat_how: "Comment régler la température:",
+                thermostat_steps: "<li>Vérifiez que 'man' est affiché à l'écran.</li><li>Tournez la molette centrale.</li><li>Appuyez sur la molette pour valider.</li>",
+                door_title: "Fermeture Porte d'Entrée",
+                door_intro: "Pour bien fermer la porte vitrée coulissante avant de la verrouiller:",
+                door_steps: "<li>Baissez la poignée à fond et faites coulisser la porte.</li><li>Relevez la poignée à fond en tirant la porte vers vous.</li><li>Écoutez le léger <strong>'clic'</strong> de verrouillage.</li>",
+                door_outro: "Une fois le clic entendu, verrouillez avec la clé.",
+                dehumidifier_title: "Déshumidificateur",
+                dehumidifier_intro: "Fonctionne automatiquement. Éteignez-le si le bruit vous gène; il conserve ses réglages.",
+                dehumidifier_alert: "🚨 <strong>Réservoir Plein:</strong> Si plein, il s'arrête avec voyant rouge. Videz le bac sous l'évier et remettez-le.",
+                bins_title: "Tri des Déchets",
+                bins_intro: "Merci de trier vos déchets selon les poubelles:",
+                bin_yellow: "Jaune:", bin_blue: "Bleue:", bin_white: "Blanche:", bin_glass: "Panier Noir:",
+                bins_extra: "🚨 Sacs poubelle supplémentaires dans le tiroir au-dessus.",
+                kitchen_title: "Cuisine & Lave-vaisselle",
+                kitchen_body: "Tablettes lave-vaisselle et produit vaisselle sous l'évier. N'hésitez pas à remplir le distributeur!",
+                checkout_title: "Consignes de Départ",
+                checkout_intro: "Le départ se fait à <strong>12:00 (Midi)</strong>. Avant de partir, merci de:",
+                checkout_list: "<li>🌡️ Régler le chauffage sur <strong>18°C</strong>.</li><li>🧼 Ne pas laisser de vaisselle sale.</li><li>🛁 Mettre les serviettes usagées dans la baignoire.</li><li>🔒 Verrouiller la porte & remettre les clés dans la boîte murale.</li>",
+                checkout_thanks: "Merci de votre séjour et bon voyage retour! 👋"
+            },
+            es: {
+                welcome_title: "¡Bienvenido a Bruselas! 🇧🇪",
+                welcome_sub: "Tu guía interactiva cerca de Gare du Midi. Toca cualquier sección para abrir.",
+                wifi_title: "Wi-Fi Gratis y Rápido",
+                wifi_networks: "Redes:",
+                wifi_password: "Contraseña:",
+                checkin_title: "Llegada (Check-In)",
+                step1_text: "Has llegado a la dirección número 80A.",
+                step2_text: "Si estoy cerca, toca el timbre azul (Olivier Pirard / Bayane). Si no, toca el timbre en amarillo (DAVID DRESE).",
+                step3_text: "Si no estoy, recoge tus llaves en la caja de seguridad de la pared. Código: <strong>5291</strong>.",
+                key_guide: "🔑 <strong>Llaves:</strong> La llave pequeña abre la puerta negra de la calle. La llave grande es para el apartamento.",
+                step4_text: "Cruza la puerta principal de la calle, entra al patio y sigue la flecha.",
+                step5_text: "Baja los pequeños escalones a la derecha. La puerta puede estar abierta a tu llegada.",
+                rules_title: "Reglas de la Casa",
+                rule_checkout: "<strong>Check-out:</strong> Salida límite a las <strong>12:00 PM (Mediodía)</strong>.",
+                rule_gate: "<strong>Seguridad:</strong> Cierra la puerta exterior con llave <strong>después de las 20:00</strong>.",
+                rule_nosmoking: "Estrictamente <strong>prohibido fumar dentro</strong>.",
+                rule_noise: "Evita ruidos en el patio <strong>después de las 22:00</strong>.",
+                tips_title: "Recomendaciones Locales",
+                tips_sub: "Toca cualquier lista para abrir en Google Maps:",
+                findesiecle_title: "Restaurante Favorito: Fin de Siècle",
+                findesiecle_text: "Rue des Chartreux en el centro. Sin reservas, pero la fila avanza rápido. ¡Excelente ensalada de queso de cabra!",
+                okaycity_text: "Supermercado cercano muy recomendado, buenos precios y gran calidad.",
+                marchemidi_text: "Gran mercado al aire libre junto a Gare du Midi (Domingos hasta las 14:00).",
+                fleamarket_text: "Mercado de pulgas diario en Place du Jeu de Balle.",
+                transport_title: "Transporte y Trenes",
+                city_transport_head: "Transporte Urbano",
+                city_transport_body: "• <strong>A pie:</strong> 15 min caminando al centro.<br>• <strong>Tranvía:</strong> Parada <strong>Lemonnier</strong> a 400m (con escalones, sin ascensor). 2 paradas al centro.<br>• <strong>Pago:</strong> Paga directamente con tu tarjeta bancaria en los validadores.",
+                train_travel_head: "Viajes en Tren (SNCB)",
+                train_travel_body: "Compre billetes en la <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>web de SNCB</a> o la app de SNCB (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). ¡Los billetes de fin de semana tienen descuento de ida y vuelta!",
+                train_times_head: "Tiempos directos desde Gare du Midi:",
+                thermostat_title: "Calefacción y Termostato",
+                thermostat_intro: "Control total del termostato. Ajustado entre 18.5°C y 19°C.",
+                thermostat_eco: "🌱 <strong>Ecológico:</strong> Mantén en modo manual y procura no superar los <strong>22°C</strong>.",
+                thermostat_how: "Cómo cambiar la temperatura:",
+                thermostat_steps: "<li>Confirma que aparezca 'man' en la pantalla.</li><li>Gira la rueda central al nivel deseado.</li><li>Presiona la rueda para confirmar.</li>",
+                door_title: "Cerrar la Puerta Principal",
+                door_intro: "Para cerrar bien la puerta corredera de cristal antes de echar la llave:",
+                door_steps: "<li>Baja la manilla del todo y desliza la puerta.</li><li>Sube la manilla completamente mientras tiras hacia ti.</li><li>Escucha el ligero <strong>'clic'</strong> de sellado.</li>",
+                door_outro: "Una vez escuches el clic, gira la llave.",
+                dehumidifier_title: "Deshumidificador",
+                dehumidifier_intro: "Funciona automáticamente. Puedes apagarlo si te molesta el ruido.",
+                dehumidifier_alert: "🚨 <strong>Depósito Lleno:</strong> Si se llena, se apaga con luz roja. Vacía el depósito en el fregadero.",
+                bins_title: "Reciclaje y Basura",
+                bins_intro: "Por favor separa la basura según el color:",
+                bin_yellow: "Amarilla:", bin_blue: "Azul:", bin_white: "Blanca:", bin_glass: "Cesta Negra:",
+                bins_extra: "🚨 Bolsas extra en el cajón encima de los cubos.",
+                kitchen_title: "Cocina y Lavavajillas",
+                kitchen_body: "Pastillas y jabón debajo del fregadero.",
+                checkout_title: "Instrucciones de Salida",
+                checkout_intro: "Check-out a las <strong>12:00 PM (Mediodía)</strong>. Antes de salir:",
+                checkout_list: "<li>🌡️ Bajar la calefacción a <strong>18°C</strong>.</li><li>🧼 No dejar platos sucios.</li><li>🛁 Dejar toallas usadas en la bañera.</li><li>🔒 Cerrar la puerta con llave y guardarla en la caja exterior.</li>",
+                checkout_thanks: "¡Gracias por tu visita y buen viaje de vuelta! 👋"
+            },
+            nl: {
+                welcome_title: "Welkom in Brussel! 🇧🇪",
+                welcome_sub: "Uw interactieve gids nabij Brussel-Zuid. Tik op een sectie om te openen.",
+                wifi_title: "Snelle & Gratis Wi-Fi",
+                wifi_networks: "Netwerken:",
+                wifi_password: "Wachtwoord:",
+                checkin_title: "Inchecken & Toegang",
+                step1_text: "U bent aangekomen bij huisnummer 80A.",
+                step2_text: "Als ik aanwezig ben, bel aan bij blauw (Olivier Pirard / Bayane). Anders bel bij geel (DAVID DRESE).",
+                step3_text: "Als ik er niet ben, haal uw sleutels uit het sleutelkluisje op de muur. Code: <strong>5291</strong>.",
+                key_guide: "🔑 <strong>Sleutels:</strong> Kleine sleutel voor de zwarte straatpoort. Grote sleutel voor de deur van het appartement.",
+                step4_text: "Ga door de straatpoort, betreed de binnenplaats en volg de pijl.",
+                step5_text: "Ga rechts de kleine trap af. De deur kan al ontgrendeld zijn.",
+                rules_title: "Huisregels",
+                rule_checkout: "<strong>Uitchecken:</strong> Standaard uitchecken om <strong>12:00 uur (Middag)</strong>.",
+                rule_gate: "<strong>Poort:</strong> Sluit de straatpoort met de sleutel <strong>na 20:00 uur</strong>.",
+                rule_nosmoking: "Strict <strong>verboden te roken binnen</strong>.",
+                rule_noise: "Beperk geluid op de binnenplaats <strong>na 22:00 uur</strong>.",
+                tips_title: "Lokale Tips & Kaarten",
+                tips_sub: "Tik op een lijst om te openen in Google Maps:",
+                findesiecle_title: "Favoriet Restaurant: Fin de Siècle",
+                findesiecle_text: "Kartuizersstraat in het centrum. Geen reservaties, maar de rij gaat snel. Heerlijke geitenkaassalade!",
+                okaycity_text: "Aanbevolen supermarkt dichtbij met goede prijzen en kwaliteit.",
+                marchemidi_text: "Grote openluchtmarkt rond Brussel-Zuid (Elke zondag tot 14:00 uur).",
+                fleamarket_text: "Dagelijkse vlooienmarkt op het Vossenplein.",
+                transport_title: "Openbaar Vervoer & Treinen",
+                city_transport_head: "Stadsvervoer",
+                city_transport_body: "• <strong>Te voet:</strong> 15 min lopen naar het centrum.<br>• <strong>Tram:</strong> Halte <strong>Lemonnier</strong> op 400m (trappen, geen lift). 2 haltes naar centrum.<br>• <strong>Betalen:</strong> Contactloos betalen met bankkaart.",
+                train_travel_head: "Treinuitstappen (NMBS/SNCB)",
+                train_travel_body: "Koop tickets via de <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>NMBS-website</a> of de NMBS-app (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). Weekendtickets zijn voordeliger!",
+                train_times_head: "Directe reistijden vanaf Brussel-Zuid:",
+                thermostat_title: "Verwarming & Thermostaat",
+                thermostat_intro: "Volledige toegang tot thermostaat. Ingesteld op 18.5°C tot 19°C.",
+                thermostat_eco: "🌱 <strong>Milieuvriendelijk:</strong> Houd op handmatig en blijf onder <strong>22°C</strong>.",
+                thermostat_how: "Temperatuur aanpassen:",
+                thermostat_steps: "<li>Controleer of 'man' op het scherm staat.</li><li>Draai aan de centrale knop.</li><li>Druk de knop in om te bevestigen.</li>",
+                door_title: "Voordeur Sluiten & Vergrendelen",
+                door_intro: "Om de glazen schuifdeur goed te sluiten:",
+                door_steps: "<li>Trek hendel helemaal omlaag en schuif dicht.</li><li>Trek hendel helemaal omhoog terwijl u de deur naar u toe trekt.</li><li>Luister naar de lichte <strong>'klik'</strong>.</li>",
+                door_outro: "Draai daarna de sleutel om.",
+                dehumidifier_title: "Luchtontvochtiger",
+                dehumidifier_intro: "Werkt automatisch. Schakel uit als het geluid stoort.",
+                dehumidifier_alert: "🚨 <strong>Tank Vol:</strong> Bij rood lampje, leeg de wateropvangbak in de gootsteen.",
+                bins_title: "Afval Scheiden",
+                bins_intro: "Sorteer afval in de gekleurde bakken:",
+                bin_yellow: "Geel:", bin_blue: "Blauw:", bin_white: "Wit:", bin_glass: "Zwarte Mand:",
+                bins_extra: "🚨 Extra vuilniszakken in de lade boven de bakken.",
+                kitchen_title: "Keuken & Vaatwasser",
+                kitchen_body: "Vaatwasblokjes onder de gootsteen.",
+                checkout_title: "Uitchecken",
+                checkout_intro: "Uitchecken om <strong>12:00 uur (Middag)</strong>. AUB voor vertrek:",
+                checkout_list: "<li>🌡️ Verwarming op <strong>18°C</strong> zetten.</li><li>🧼 Geen vuile vaat achterlaten.</li><li>🛁 Gebruikte handdoeken in het bad leggen.</li><li>🔒 Deur op slot doen & sleutels in kluisje stoppen.</li>",
+                checkout_thanks: "Bedankt voor uw verblijf en goede reis! 👋"
+            },
+            pt: {
+                welcome_title: "Bem-vindo a Bruxelas! 🇧🇪",
+                welcome_sub: "Seu guia interativo perto da Gare du Midi. Toque em qualquer seção para abrir.",
+                wifi_title: "Wi-Fi Rápido e Gratuito",
+                wifi_networks: "Redes:",
+                wifi_password: "Senha:",
+                checkin_title: "Entrada (Check-In)",
+                step1_text: "Você chegou ao destino no número 80A.",
+                step2_text: "Se eu estiver por perto, toque a campainha em azul (Olivier Pirard / Bayane). Caso contrário, toque em amarelo (DAVID DRESE).",
+                step3_text: "Se eu não estiver, pegue as chaves no cofre de parede. Código: <strong>5291</strong>.",
+                key_guide: "🔑 <strong>Chaves:</strong> A chave pequena abre o portão preto da rua. A chave maior é para o apartamento.",
+                step4_text: "Passe pelo portão principal da rua, entre no pátio e siga a seta.",
+                step5_text: "Desça os pequenos degraus à direita. A porta pode estar destrancada na chegada.",
+                rules_title: "Regras da Casa",
+                rule_checkout: "<strong>Check-out:</strong> Horário limite às <strong>12:00 (Meio-dia)</strong>.",
+                rule_gate: "<strong>Segurança:</strong> Tranque o portão da rua com a chave <strong>após as 20:00</strong>.",
+                rule_nosmoking: "Estritamente <strong>proibido fumar dentro</strong>.",
+                rule_noise: "Mantenha o silêncio no pátio <strong>após as 22:00</strong>.",
+                tips_title: "Dicas Locais e Mapas",
+                tips_sub: "Toque em qualquer lista para abrir no Google Maps:",
+                findesiecle_title: "Restaurante Favorito: Fin de Siècle",
+                findesiecle_text: "Rue des Chartreux no centro. Sem reservas, mas a fila anda rápido. Excelente salada de queijo de cabra!",
+                okaycity_text: "Supermercado próximo altamente recomendado, ótimos preços e qualidade.",
+                marchemidi_text: "Grande mercado ao ar livre na Gare du Midi (Aos domingos até as 14:00).",
+                fleamarket_text: "Mercado de pulgas diário na Place du Jeu de Balle.",
+                transport_title: "Transporte e Trens",
+                city_transport_head: "Transporte Urbano",
+                city_transport_body: "• <strong>A pé:</strong> 15 min caminhando até o centro.<br>• <strong>Bonde:</strong> Parada <strong>Lemonnier</strong> a 400m (com degraus, sem elevador). 2 paradas até o centro.<br>• <strong>Pagamento:</strong> Pague diretamente com seu cartão bancário nos validadores.",
+                train_travel_head: "Viagens de Trem (SNCB)",
+                train_travel_body: "Compre bilhetes no <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>site da SNCB</a> ou no app da SNCB (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). Passagens de fim de semana têm desconto de ida e volta!",
+                train_times_head: "Tempos diretos a partir da Gare du Midi:",
+                thermostat_title: "Aquecimento e Termostato",
+                thermostat_intro: "Acesso total ao termostato. Ajustado entre 18.5°C e 19°C.",
+                thermostat_eco: "🌱 <strong>Ecológico:</strong> Mantenha no modo manual e tente não ultrapassar <strong>22°C</strong>.",
+                thermostat_how: "Como alterar a temperatura:",
+                thermostat_steps: "<li>Confirme se 'man' aparece na tela.</li><li>Gire o botão central até a temperatura desejada.</li><li>Pressione o botão para confirmar.</li>",
+                door_title: "Fechar e Trancar a Porta",
+                door_intro: "Para fechar bem a porta de vidro antes de trancar:",
+                door_steps: "<li>Abaixe a maçaneta totalmente e deslize a porta.</li><li>Levante a maçaneta completamente enquanto puxa a porta para você.</li><li>Ouça o leve <strong>'clique'</strong> de vedação.</li>",
+                door_outro: "Assim que ouvir o clique, gire a chave.",
+                dehumidifier_title: "Desumidificador",
+                dehumidifier_intro: "Funciona automaticamente. Pode desligar se o barulho incomodar.",
+                dehumidifier_alert: "🚨 <strong>Tanque Cheio:</strong> Se encher, ele desliga com luz vermelha. Esvazie o recipiente na pia.",
+                bins_title: "Reciclagem e Lixo",
+                bins_intro: "Por favor, separe o lixo nas lixeiras coloridas:",
+                bin_yellow: "Amarela:", bin_blue: "Azul:", bin_white: "Branca:", bin_glass: "Cesta Preta:",
+                bins_extra: "🚨 Sacos extras na gaveta acima das lixeiras.",
+                kitchen_title: "Cozinha e Lava-louças",
+                kitchen_body: "Pastilhas e detergente embaixo da pia.",
+                checkout_title: "Instruções de Saída",
+                checkout_intro: "Check-out às <strong>12:00 (Meio-dia)</strong>. Antes de sair:",
+                checkout_list: "<li>🌡️ Baixar aquecimento para <strong>18°C</strong>.</li><li>🧼 Não deixar louça suja.</li><li>🛁 Colocar toalhas usadas na banheira.</li><li>🔒 Trancar a porta e guardar as chaves no cofre externo.</li>",
+                checkout_thanks: "Obrigado pela visita e boa viagem de volta! 👋"
+            }
+        };
+
+        // Function to switch active UI language
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+            
+            // Highlight active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById(`btn-${lang}`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Translate elements marked with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Save preference locally
+            localStorage.setItem('preferred_lang', lang);
+        }
+
+        // Initialize default language
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred_lang') || 'en';
+            setLanguage(savedLang);
+        });
     </script>
 
 </body>
