@@ -136,6 +136,7 @@
             <div class="px-5 pb-5 pt-1 border-t border-slate-50 space-y-3 text-sm text-slate-600 leading-relaxed">
                 <ul class="list-disc list-inside space-y-2 text-xs">
                     <li data-i18n="rule_checkout"><strong>Check-out:</strong> Standard check-out is at <strong>12:00 PM (Noon)</strong>.</li>
+                    <li data-i18n="rule_water">🚰 <strong>Tap Water:</strong> The tap water is 100% safe and fully drinkable.</li>
                     <li data-i18n="rule_gate"><strong>Gate Security:</strong> Lock main street gate with key <strong>after 8:00 PM</strong>.</li>
                     <li data-i18n="rule_nosmoking">Strictly <strong>no smoking inside</strong> flat. Close doors if smoking outside.</li>
                     <li data-i18n="rule_noise">Keep noise to a minimum, especially in courtyard <strong>after 10 PM</strong>.</li>
@@ -198,6 +199,7 @@
                     </a>
                     <div class="bg-slate-100 p-3 rounded-xl text-slate-700 space-y-1.5 text-[11px] border border-slate-200 mt-1">
                         <div>🛒 <strong><a href="https://maps.app.goo.gl/7bjh3J9ko2K7gUDA8" target="_blank" class="underline text-teal-700">OkayCity Supermarket</a>:</strong> <span data-i18n="okaycity_text">Highly recommended nearby for great prices and quality products.</span></div>
+                        <div>🛍️ <span data-i18n="delhaize_text"><strong>Proxy Delhaize Shop:</strong> Small supermarket right around the corner (to the right as you step outside). Fresh quality products, a bit more expensive but very close.</span></div>
                         <div>🛍️ <strong><a href="https://www.visit.brussels/fr/visiteurs/venue-details.Marche-du-Midi.266060" target="_blank" class="underline text-teal-700">Marché du Midi</a>:</strong> <span data-i18n="marchemidi_text">Huge open-air market around Gare du Midi (Every Sunday until 2:00 PM).</span></div>
                         <div>📻 <strong><a href="https://marches.bruxelles.be/marches/marche-aux-puces-du-jeu-de-balle" target="_blank" class="underline text-teal-700">Marché aux Puces</a>:</strong> <span data-i18n="fleamarket_text">Daily vintage flea market at Place du Jeu de Balle.</span></div>
                     </div>
@@ -206,7 +208,40 @@
             </div>
         </details>
 
-        <!-- 5. GETTING AROUND & TRANSPORT -->
+        <!-- 5. AIRPORTS & GETTING HERE -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">✈️</span>
+                    <span data-i18n="airports_title">Airports & Getting Here</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-3 border-t border-slate-50 space-y-4 text-xs text-slate-600">
+                <p class="text-slate-500 font-medium" data-i18n="airports_sub">How to reach the apartment from Brussels airports:</p>
+
+                <!-- Zaventem BRU -->
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
+                    <h3 class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                        <span>🛫</span> <span data-i18n="zaventem_title">Brussels National Zaventem Airport (BRU)</span>
+                    </h3>
+                    <p data-i18n="zaventem_train">• <strong>Direct Train:</strong> Takes ~20–30 mins. Return tickets cost ~€20–€23 (cheaper on weekends).</p>
+                    <p data-i18n="zaventem_taxi">• <strong>Uber / Bolt:</strong> ~€35–€50 one-way, ~25–45 mins depending on traffic.</p>
+                </div>
+
+                <!-- Charleroi CRL -->
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-1.5">
+                    <h3 class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                        <span>🛬</span> <span data-i18n="charleroi_title">Brussels South Charleroi Airport (CRL)</span>
+                    </h3>
+                    <p data-i18n="charleroi_flibco">• <strong>Flibco Shuttle Bus (Strongly Recommended):</strong> Direct to Gare du Midi. Costs ~€16 to max €20 one-way. Departs every 20 mins, takes ~50–60 mins. [<a href="https://www.flibco.com" target="_blank" class="underline text-teal-700 font-bold">Book Flibco Bus ↗</a>]</p>
+                    <p data-i18n="charleroi_taxi">• <strong>Uber / Bolt:</strong> ~€90–€130 one-way.</p>
+                    <p data-i18n="charleroi_shuttle">• <strong>Pre-booked Private Shuttle:</strong> ~€70–€100. Useful options to pre-book: [<a href="https://transfers2airport.be" target="_blank" class="underline text-teal-700">Transfers2Airport ↗</a>] or [<a href="https://gettransfer.com" target="_blank" class="underline text-teal-700">GetTransfer ↗</a>].</p>
+                </div>
+            </div>
+        </details>
+
+        <!-- 6. GETTING AROUND & TRAINS -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
@@ -247,7 +282,38 @@
             </div>
         </details>
 
-        <!-- 6. THERMOSTAT GUIDE -->
+        <!-- 7. PARKING NEARBY -->
+        <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
+            <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🅿️</span>
+                    <span data-i18n="parking_title">Parking Nearby</span>
+                </div>
+                <span class="text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
+            </summary>
+            <div class="px-5 pb-5 pt-3 border-t border-slate-50 space-y-3 text-xs text-slate-600">
+                <p class="text-slate-500 font-medium" data-i18n="parking_sub">Useful links and parking options around the property:</p>
+
+                <p data-i18n="parking_app">📱 <strong>Street Parking App:</strong> Download <a href="https://www.easypark.com/en-be" target="_blank" class="underline text-teal-700 font-bold">EasyPark</a> to pay for on-street parking and simulate prices in advance.</p>
+
+                <p data-i18n="parking_zones">🗺️ <strong>Interactive Zones & Rates:</strong> Check parking zones and price indications for Rue Brogniez 80A on <a href="https://map.seety.co/Rue%20Brogniez%2080A,%201070%20Brussels/15?lang=en" target="_blank" class="underline text-teal-700 font-bold">Seety Interactive Map ↗</a>.</p>
+
+                <p data-i18n="parking_search">🔍 <strong>Search & Reserve Parking:</strong> Compare options on <a href="https://parclick.com" target="_blank" class="underline text-teal-700">Parclick</a>, <a href="https://www.onepark.co" target="_blank" class="underline text-teal-700">Onepark</a>, or <a href="https://www.myflexipark.be/en" target="_blank" class="underline text-teal-700">MyFlexiPark</a>.</p>
+
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1">
+                    <h4 class="font-bold text-slate-900" data-i18n="parking_facilities_head">🏢 Official Parking Garages:</h4>
+                    <ul class="space-y-1 list-disc list-inside text-[11px]">
+                        <li><a href="https://www.q-park.be/en-gb/cities/brussels/bru---zuid/midi/" target="_blank" class="underline text-teal-700 font-bold">Q-Park Gare du Midi ↗</a></li>
+                        <li><a href="https://www.indigoneo.be/en/parkings/14512/parking-gare-du-midi-2" target="_blank" class="underline text-teal-700 font-bold">Indigo Neo Gare du Midi 2 ↗</a></li>
+                        <li><a href="https://www.bepark.eu/en/parking/belgique/saint-gilles-sint-gillis/rue-de-hollande-hollandstraat/267" target="_blank" class="underline text-teal-700 font-bold">BePark Rue de Hollande ↗</a></li>
+                    </ul>
+                </div>
+
+                <p data-i18n="parking_disabled">♿ <strong>Disabled Parking Map:</strong> View dedicated accessible spots on the <a href="https://www.bruxelles.be/parking-handicap" target="_blank" class="underline text-teal-700 font-bold">Brussels Disabled Parking Map ↗</a>.</p>
+            </div>
+        </details>
+
+        <!-- 8. THERMOSTAT GUIDE -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
@@ -274,7 +340,7 @@
             </div>
         </details>
 
-        <!-- 7. CLOSING & LOCKING DOOR -->
+        <!-- 9. CLOSING & LOCKING DOOR -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
@@ -295,7 +361,7 @@
             </div>
         </details>
 
-        <!-- 8. DEHUMIDIFIER GUIDE -->
+        <!-- 10. DEHUMIDIFIER GUIDE -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
@@ -313,7 +379,7 @@
             </div>
         </details>
 
-        <!-- 9. WASTE & RECYCLING BINS -->
+        <!-- 11. WASTE & RECYCLING BINS -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
@@ -342,13 +408,18 @@
                         <p><strong data-i18n="bin_glass">Black Basket:</strong> Clean empty glass bottles/jars.</p>
                     </div>
                 </div>
-                <div class="bg-slate-100 p-3 rounded-xl space-y-1 border border-slate-100 text-xs mt-3" data-i18n="bins_extra">
+                <div class="bg-amber-50 border border-amber-200 p-3 rounded-xl text-xs text-amber-950 font-medium" data-i18n="bins_schedule">
+                    🚨 <strong>Long-Term Stays / Waste Collection:</strong> If you need to take bins out to the street:<br>
+                    • <strong>Mondays after 6:00 PM:</strong> Blue (PMD) and White (residual) bins only.<br>
+                    • <strong>Wednesdays after 6:00 PM:</strong> Yellow (paper/cardboard) and White (residual) bins only.
+                </div>
+                <div class="bg-slate-100 p-3 rounded-xl space-y-1 border border-slate-100 text-xs mt-2" data-i18n="bins_extra">
                     🚨 Extra bin bags are stored in drawer above bins.
                 </div>
             </div>
         </details>
 
-        <!-- 10. KITCHEN / DISHWASHER -->
+        <!-- 12. KITCHEN / DISHWASHER -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
@@ -362,7 +433,7 @@
             </div>
         </details>
 
-        <!-- 11. CHECK-OUT CHECKLIST -->
+        <!-- 13. CHECK-OUT CHECKLIST -->
         <details class="group bg-white rounded-2xl shadow-xs border border-slate-100 overflow-hidden transition-all duration-200">
             <summary class="flex items-center justify-between p-5 font-bold text-lg text-slate-950 cursor-pointer select-none list-none">
                 <div class="flex items-center space-x-3">
@@ -433,6 +504,7 @@
                 step5_text: "Head right down short steps to reach private entrance. Door might be unlocked upon arrival.",
                 rules_title: "House Rules & Logistics",
                 rule_checkout: "<strong>Check-out:</strong> Standard check-out is at <strong>12:00 PM (Noon)</strong>.",
+                rule_water: "🚰 <strong>Tap Water:</strong> The tap water is 100% safe and fully drinkable.",
                 rule_gate: "<strong>Gate Security:</strong> Lock main street gate with key <strong>after 8:00 PM</strong>.",
                 rule_nosmoking: "Strictly <strong>no smoking inside</strong> flat. Close doors if smoking outside.",
                 rule_noise: "Keep noise to a minimum, especially in courtyard <strong>after 10 PM</strong>.",
@@ -441,14 +513,31 @@
                 findesiecle_title: "Favorite Restaurant: Fin de Siècle",
                 findesiecle_text: "Rue des Chartreux in center. No advance bookings, queue moves fast (10-30 min wait max). Great goat cheese salad for vegetarians!",
                 okaycity_text: "Highly recommended nearby for great prices and quality products.",
+                delhaize_text: "<strong>Proxy Delhaize Shop:</strong> Small supermarket right around the corner (to the right as you step outside). Fresh quality products, a bit more expensive but very close.",
                 marchemidi_text: "Huge open-air market around Gare du Midi (Every Sunday until 2:00 PM).",
                 fleamarket_text: "Daily vintage flea market at Place du Jeu de Balle.",
+                airports_title: "Airports & Getting Here",
+                airports_sub: "How to reach the apartment from Brussels airports:",
+                zaventem_title: "Brussels National Zaventem Airport (BRU)",
+                zaventem_train: "• <strong>Direct Train:</strong> Takes ~20–30 mins. Return tickets cost ~€20–€23 (cheaper on weekends).",
+                zaventem_taxi: "• <strong>Uber / Bolt:</strong> ~€35–€50 one-way, ~25–45 mins depending on traffic.",
+                charleroi_title: "Brussels South Charleroi Airport (CRL)",
+                charleroi_flibco: "• <strong>Flibco Shuttle Bus (Strongly Recommended):</strong> Direct to Gare du Midi. Costs ~€16 to max €20 one-way. Departs every 20 mins, takes ~50–60 mins. [<a href='https://www.flibco.com' target='_blank' class='underline text-teal-700 font-bold'>Book Flibco Bus ↗</a>]",
+                charleroi_taxi: "• <strong>Uber / Bolt:</strong> ~€90–€130 one-way.",
+                charleroi_shuttle: "• <strong>Pre-booked Private Shuttle:</strong> ~€70–€100. Useful options to pre-book: [<a href='https://transfers2airport.be' target='_blank' class='underline text-teal-700'>Transfers2Airport ↗</a>] or [<a href='https://gettransfer.com' target='_blank' class='underline text-teal-700'>GetTransfer ↗</a>].",
                 transport_title: "Getting Around & Trains",
                 city_transport_head: "Local City Transport",
                 city_transport_body: "• <strong>Walking:</strong> Easy 15-min walk to city center.<br>• <strong>Tram:</strong> <strong>Lemonnier stop</strong> 400m away (steps, no lifts). Direct 2 stops to center.<br>• <strong>Payment:</strong> Tap bank card directly at validators. MOBIB cards available at Gare du Midi Kiosk (-1 level).",
                 train_travel_head: "Train Day Trips (SNCB)",
                 train_travel_body: "Buy tickets via <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>SNCB website</a> or the SNCB app (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). Weekend return tickets are cheaper! Watch out for IC (express) vs L (slow local) trains.",
                 train_times_head: "Direct train times from Gare du Midi:",
+                parking_title: "Parking Nearby",
+                parking_sub: "Useful links and parking options around the property:",
+                parking_app: "📱 <strong>Street Parking App:</strong> Download <a href='https://www.easypark.com/en-be' target='_blank' class='underline text-teal-700 font-bold'>EasyPark</a> to pay for on-street parking and simulate prices in advance.",
+                parking_zones: "🗺️ <strong>Interactive Zones & Rates:</strong> Check parking zones and price indications for Rue Brogniez 80A on <a href='https://map.seety.co/Rue%20Brogniez%2080A,%201070%20Brussels/15?lang=en' target='_blank' class='underline text-teal-700 font-bold'>Seety Interactive Map ↗</a>.",
+                parking_search: "🔍 <strong>Search & Reserve Parking:</strong> Compare options on <a href='https://parclick.com' target='_blank' class='underline text-teal-700'>Parclick</a>, <a href='https://www.onepark.co' target='_blank' class='underline text-teal-700'>Onepark</a>, or <a href='https://www.myflexipark.be/en' target='_blank' class='underline text-teal-700'>MyFlexiPark</a>.",
+                parking_facilities_head: "🏢 Official Parking Garages:",
+                parking_disabled: "♿ <strong>Disabled Parking Map:</strong> View dedicated accessible spots on the <a href='https://www.bruxelles.be/parking-handicap' target='_blank' class='underline text-teal-700 font-bold'>Brussels Disabled Parking Map ↗</a>.",
                 thermostat_title: "Heating & Thermostat",
                 thermostat_intro: "Full access to adjust heating. Set between 18.5°C and 19°C upon arrival.",
                 thermostat_eco: "🌱 <strong>Planet-Friendly:</strong> Keep on manual settings and please try not to exceed <strong>22°C</strong>.",
@@ -464,6 +553,7 @@
                 bins_title: "Sorting Waste & Bins",
                 bins_intro: "Please sort waste carefully using colored bins:",
                 bin_yellow: "Yellow:", bin_blue: "Blue:", bin_white: "White:", bin_glass: "Black Basket:",
+                bins_schedule: "🚨 <strong>Long-Term Stays / Waste Collection:</strong> If you need to take bins out to the street:<br>• <strong>Mondays after 6:00 PM:</strong> Blue (PMD) and White (residual) bins only.<br>• <strong>Wednesdays after 6:00 PM:</strong> Yellow (paper/cardboard) and White (residual) bins only.",
                 bins_extra: "🚨 Extra bin bags are stored in drawer above bins.",
                 kitchen_title: "Kitchen & Dishwasher",
                 kitchen_body: "Dishwasher tablets and liquid detergent are stored under kitchen counter sink. Feel free to refill liquid detergent dispenser upon arrival!",
@@ -487,6 +577,7 @@
                 step5_text: "Tournez à droite en descendant les petites marches. La porte est peut-être déjà déverrouillée.",
                 rules_title: "Règles de la Maison",
                 rule_checkout: "<strong>Départ:</strong> Le départ s'effectue à <strong>12:00 (Midi)</strong>.",
+                rule_water: "🚰 <strong>Eau du robinet :</strong> L'eau du robinet est 100 % potable et saine à boire.",
                 rule_gate: "<strong>Sécurité Grille:</strong> Fermez la grille principale à clé <strong>après 20:00</strong>.",
                 rule_nosmoking: "Strictement <strong>non-fumeur à l'intérieur</strong>. Fermez la porte si vous fumez dehors.",
                 rule_noise: "Réduisez le bruit dans la cour <strong>après 22:00</strong>.",
@@ -495,14 +586,31 @@
                 findesiecle_title: "Restaurant Préféré: Fin de Siècle",
                 findesiecle_text: "Rue des Chartreux au centre. Pas de réservation, mais la file avance vite (10-30 min max). Délicieuse salade de chèvre chaud!",
                 okaycity_text: "Supermarché recommandé à proximité, très bons prix et produits de qualité.",
+                delhaize_text: "<strong>Proxy Delhaize :</strong> Petit supermarché juste au coin de la rue (sur la droite en sortant). Produits frais de qualité, un peu plus cher mais très proche.",
                 marchemidi_text: "Grand marché en plein air autour de la Gare du Midi (Chaque dimanche jusqu'à 14h00).",
                 fleamarket_text: "Marché aux puces quotidien Place du Jeu de Balle.",
+                airports_title: "Aéroports & Trajet",
+                airports_sub: "Comment rejoindre l'appartement depuis les aéroports de Bruxelles :",
+                zaventem_title: "Aéroport de Bruxelles-National Zaventem (BRU)",
+                zaventem_train: "• <strong>Train Direct :</strong> Durée ~20–30 min. Aller-retour ~20 €–23 € (moins cher le week-end).",
+                zaventem_taxi: "• <strong>Uber / Bolt :</strong> ~35 €–50 € l'aller simple, ~25–45 min selon le trafic.",
+                charleroi_title: "Aéroport de Bruxelles-Sud Charleroi (CRL)",
+                charleroi_flibco: "• <strong>Navette Flibco (Fortement recommandé) :</strong> Direct vers la Gare du Midi. ~16 € à max 20 € l'aller simple. Départ toutes les 20 min, trajet ~50–60 min. [<a href='https://www.flibco.com' target='_blank' class='underline text-teal-700 font-bold'>Réserver Bus Flibco ↗</a>]",
+                charleroi_taxi: "• <strong>Uber / Bolt :</strong> ~90 €–130 € l'aller simple.",
+                charleroi_shuttle: "• <strong>Navette Privée Préréservée :</strong> ~70 €–100 €. Liens pour réserver : [<a href='https://transfers2airport.be' target='_blank' class='underline text-teal-700'>Transfers2Airport ↗</a>] ou [<a href='https://gettransfer.com' target='_blank' class='underline text-teal-700'>GetTransfer ↗</a>].",
                 transport_title: "Transports & Trains",
                 city_transport_head: "Transports en Ville",
                 city_transport_body: "• <strong>À pied:</strong> 15 min à pied du centre-ville.<br>• <strong>Tram:</strong> Station <strong>Lemonnier</strong> à 400m (quelques marches, sans ascenseur). 2 arrêts du centre.<br>• <strong>Paiement:</strong> Scannez votre carte bancaire directement. Carte MOBIB disponible au guichet Gare du Midi (-1).",
                 train_travel_head: "Excursions en Train (SNCB)",
                 train_travel_body: "Achetez vos billets sur le <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>site SNCB</a> ou via l'application SNCB (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). Billets week-end à prix réduit! Attention aux trains IC (rapides) vs L (lents).",
                 train_times_head: "Temps de trajet direct depuis Gare du Midi:",
+                parking_title: "Stationnement & Parking",
+                parking_sub: "Liens utiles et options de parking à proximité :",
+                parking_app: "📱 <strong>Application de Stationnement :</strong> Téléchargez <a href='https://www.easypark.com/en-be' target='_blank' class='underline text-teal-700 font-bold'>EasyPark</a> pour payer dans la rue et simuler les tarifs.",
+                parking_zones: "🗺️ <strong>Zones & Tarifs :</strong> Consultez la carte interactive Rue Brogniez 80A sur <a href='https://map.seety.co/Rue%20Brogniez%2080A,%201070%20Brussels/15?lang=fr' target='_blank' class='underline text-teal-700 font-bold'>Carte Seety ↗</a>.",
+                parking_search: "🔍 <strong>Rechercher un Parking :</strong> Comparez sur <a href='https://parclick.com' target='_blank' class='underline text-teal-700'>Parclick</a>, <a href='https://www.onepark.co' target='_blank' class='underline text-teal-700'>Onepark</a>, ou <a href='https://www.myflexipark.be/en' target='_blank' class='underline text-teal-700'>MyFlexiPark</a>.",
+                parking_facilities_head: "🏢 Parkings Couverts Officiels :",
+                parking_disabled: "♿ <strong>Places PMR / Handicapés :</strong> Consultez les emplacements réservés sur la <a href='https://www.bruxelles.be/parking-handicap' target='_blank' class='underline text-teal-700 font-bold'>Carte PMR Bruxelles ↗</a>.",
                 thermostat_title: "Chauffage & Thermostat",
                 thermostat_intro: "Accès libre au thermostat. Réglé entre 18.5°C et 19°C à votre arrivée.",
                 thermostat_eco: "🌱 <strong>Éco-responsable:</strong> Restez en mode manuel et évitez de dépasser <strong>22°C</strong>.",
@@ -518,6 +626,7 @@
                 bins_title: "Tri des Déchets",
                 bins_intro: "Merci de trier vos déchets selon les poubelles:",
                 bin_yellow: "Jaune:", bin_blue: "Bleue:", bin_white: "Blanche:", bin_glass: "Panier Noir:",
+                bins_schedule: "🚨 <strong>Longs séjours / Sortie des poubelles :</strong> Si vous devez sortir les sacs dans la rue :<br>• <strong>Lundi après 18h00 :</strong> Poubelles Bleues (PMC) et Blanches (résiduels).<br>• <strong>Mercredi après 18h00 :</strong> Poubelles Jaunes (papier/carton) et Blanches (résiduels).",
                 bins_extra: "🚨 Sacs poubelle supplémentaires dans le tiroir au-dessus.",
                 kitchen_title: "Cuisine & Lave-vaisselle",
                 kitchen_body: "Tablettes lave-vaisselle et produit vaisselle sous l'évier. N'hésitez pas à remplir le distributeur!",
@@ -541,6 +650,7 @@
                 step5_text: "Baja los pequeños escalones a la derecha. La puerta puede estar abierta a tu llegada.",
                 rules_title: "Reglas de la Casa",
                 rule_checkout: "<strong>Check-out:</strong> Salida límite a las <strong>12:00 PM (Mediodía)</strong>.",
+                rule_water: "🚰 <strong>Agua del grifo:</strong> El agua del grifo es 100 % potable y segura para beber.",
                 rule_gate: "<strong>Seguridad:</strong> Cierra la puerta exterior con llave <strong>después de las 20:00</strong>.",
                 rule_nosmoking: "Estrictamente <strong>prohibido fumar dentro</strong>.",
                 rule_noise: "Evita ruidos en el patio <strong>después de las 22:00</strong>.",
@@ -549,14 +659,31 @@
                 findesiecle_title: "Restaurante Favorito: Fin de Siècle",
                 findesiecle_text: "Rue des Chartreux en el centro. Sin reservas, pero la fila avanza rápido. ¡Excelente ensalada de queso de cabra!",
                 okaycity_text: "Supermercado cercano muy recomendado, buenos precios y gran calidad.",
+                delhaize_text: "<strong>Tienda Delhaize:</strong> Pequeño supermercado a la vuelta de la esquina (a la derecha al salir). Productos frescos y de calidad, un poco más caro pero muy cerca.",
                 marchemidi_text: "Gran mercado al aire libre junto a Gare du Midi (Domingos hasta las 14:00).",
                 fleamarket_text: "Mercado de pulgas diario en Place du Jeu de Balle.",
+                airports_title: "Aeropuertos y Cómo Llegar",
+                airports_sub: "Cómo llegar al apartamento desde los aeropuertos de Bruselas:",
+                zaventem_title: "Aeropuerto de Bruselas-Zaventem (BRU)",
+                zaventem_train: "• <strong>Tren Directo:</strong> Tarda ~20–30 min. Ida y vuelta ~20 €–23 € (más barato los fines de semana).",
+                zaventem_taxi: "• <strong>Uber / Bolt:</strong> ~35 €–50 € por trayecto, ~25–45 min según el tráfico.",
+                charleroi_title: "Aeropuerto de Bruselas-Sur Charleroi (CRL)",
+                charleroi_flibco: "• <strong>Autobús Flibco (Muy recomendado):</strong> Directo a Gare du Midi. ~16 € a máx 20 € por trayecto. Sale cada 20 min, tarda ~50–60 min. [<a href='https://www.flibco.com' target='_blank' class='underline text-teal-700 font-bold'>Reservar Flibco ↗</a>]",
+                charleroi_taxi: "• <strong>Uber / Bolt:</strong> ~90 €–130 € por trayecto.",
+                charleroi_shuttle: "• <strong>Transporte Privado Reservado:</strong> ~70 €–100 €. Enlaces para reservar: [<a href='https://transfers2airport.be' target='_blank' class='underline text-teal-700'>Transfers2Airport ↗</a>] o [<a href='https://gettransfer.com' target='_blank' class='underline text-teal-700'>GetTransfer ↗</a>].",
                 transport_title: "Transporte y Trenes",
                 city_transport_head: "Transporte Urbano",
                 city_transport_body: "• <strong>A pie:</strong> 15 min caminando al centro.<br>• <strong>Tranvía:</strong> Parada <strong>Lemonnier</strong> a 400m (con escalones, sin ascensor). 2 paradas al centro.<br>• <strong>Pago:</strong> Paga directamente con tu tarjeta bancaria en los validadores.",
                 train_travel_head: "Viajes en Tren (SNCB)",
                 train_travel_body: "Compre billetes en la <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>web de SNCB</a> o la app de SNCB (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). ¡Los billetes de fin de semana tienen descuento de ida y vuelta!",
                 train_times_head: "Tiempos directos desde Gare du Midi:",
+                parking_title: "Aparcamiento / Parking",
+                parking_sub: "Enlaces útiles y opciones de aparcamiento cercanas:",
+                parking_app: "📱 <strong>App de Aparcamiento:</strong> Descarga <a href='https://www.easypark.com/en-be' target='_blank' class='underline text-teal-700 font-bold'>EasyPark</a> para pagar en la calle y consultar tarifas.",
+                parking_zones: "🗺️ <strong>Zonas y Tarifas:</strong> Consulta las zonas y precios en Rue Brogniez 80A en el <a href='https://map.seety.co/Rue%20Brogniez%2080A,%201070%20Brussels/15?lang=en' target='_blank' class='underline text-teal-700 font-bold'>Mapa interactivo Seety ↗</a>.",
+                parking_search: "🔍 <strong>Buscar y Reservar:</strong> Compara opciones en <a href='https://parclick.com' target='_blank' class='underline text-teal-700'>Parclick</a>, <a href='https://www.onepark.co' target='_blank' class='underline text-teal-700'>Onepark</a>, o <a href='https://www.myflexipark.be/en' target='_blank' class='underline text-teal-700'>MyFlexiPark</a>.",
+                parking_facilities_head: "🏢 Parkings Cubiertos Oficiales:",
+                parking_disabled: "♿ <strong>Plazas Movilidad Reducida:</strong> Consulta plazas en el <a href='https://www.bruxelles.be/parking-handicap' target='_blank' class='underline text-teal-700 font-bold'>Mapa de Aparcamiento PMR ↗</a>.",
                 thermostat_title: "Calefacción y Termostato",
                 thermostat_intro: "Control total del termostato. Ajustado entre 18.5°C y 19°C.",
                 thermostat_eco: "🌱 <strong>Ecológico:</strong> Mantén en modo manual y procura no superar los <strong>22°C</strong>.",
@@ -572,6 +699,7 @@
                 bins_title: "Reciclaje y Basura",
                 bins_intro: "Por favor separa la basura según el color:",
                 bin_yellow: "Amarilla:", bin_blue: "Azul:", bin_white: "Blanca:", bin_glass: "Cesta Negra:",
+                bins_schedule: "🚨 <strong>Estancias largas / Sacar la basura:</strong> Si necesitas sacar los cubos a la calle:<br>• <strong>Lunes después de las 18:00:</strong> Cubos Azules (envases) y Blancos (resto).<br>• <strong>Miércoles después de las 18:00:</strong> Cubos Amarillos (papel/cartón) y Blancos (resto).",
                 bins_extra: "🚨 Bolsas extra en el cajón encima de los cubos.",
                 kitchen_title: "Cocina y Lavavajillas",
                 kitchen_body: "Pastillas y jabón debajo del fregadero.",
@@ -595,6 +723,7 @@
                 step5_text: "Ga rechts de kleine trap af. De deur kan al ontgrendeld zijn.",
                 rules_title: "Huisregels",
                 rule_checkout: "<strong>Uitchecken:</strong> Standaard uitchecken om <strong>12:00 uur (Middag)</strong>.",
+                rule_water: "🚰 <strong>Kraanwater:</strong> Het kraanwater is 100% veilig en perfect drinkbaar.",
                 rule_gate: "<strong>Poort:</strong> Sluit de straatpoort met de sleutel <strong>na 20:00 uur</strong>.",
                 rule_nosmoking: "Strict <strong>verboden te roken binnen</strong>.",
                 rule_noise: "Beperk geluid op de binnenplaats <strong>na 22:00 uur</strong>.",
@@ -603,14 +732,31 @@
                 findesiecle_title: "Favoriet Restaurant: Fin de Siècle",
                 findesiecle_text: "Kartuizersstraat in het centrum. Geen reservaties, maar de rij gaat snel. Heerlijke geitenkaassalade!",
                 okaycity_text: "Aanbevolen supermarkt dichtbij met goede prijzen en kwaliteit.",
+                delhaize_text: "<strong>Proxy Delhaize Winkel:</strong> Kleine supermarkt om de hoek (naar rechts als u naar buiten stapt). Verse kwaliteitsproducten, iets duurder maar heel dichtbij.",
                 marchemidi_text: "Grote openluchtmarkt rond Brussel-Zuid (Elke zondag tot 14:00 uur).",
                 fleamarket_text: "Dagelijkse vlooienmarkt op het Vossenplein.",
+                airports_title: "Luchthavens & Bereikbaarheid",
+                airports_sub: "Hoe bereikt u het appartement vanaf de Brusselse luchthavens:",
+                zaventem_title: "Luchthaven Brussel-Zaventem (BRU)",
+                zaventem_train: "• <strong>Rechtstreekse Trein:</strong> Duurt ~20–30 min. Helticket ~€20–€23 (goedkoper in het weekend).",
+                zaventem_taxi: "• <strong>Uber / Bolt:</strong> ~€35–€50 enkele reis, ~25–45 min afhankelijk van het verkeer.",
+                charleroi_title: "Luchthaven Brussel-Zuid Charleroi (CRL)",
+                charleroi_flibco: "• <strong>Flibco Shuttlebus (Sterk aanbevolen):</strong> Rechtstreeks naar Brussel-Zuid. ~€16 tot max €20 enkele reis. Vertrekt elke 20 min, duurt ~50–60 min. [<a href='https://www.flibco.com' target='_blank' class='underline text-teal-700 font-bold'>Boek Flibco Bus ↗</a>]",
+                charleroi_taxi: "• <strong>Uber / Bolt:</strong> ~€90–€130 enkele reis.",
+                charleroi_shuttle: "• <strong>Privé Shuttle Reserveren:</strong> ~€70–€100. Handige links om te boeken: [<a href='https://transfers2airport.be' target='_blank' class='underline text-teal-700'>Transfers2Airport ↗</a>] of [<a href='https://gettransfer.com' target='_blank' class='underline text-teal-700'>GetTransfer ↗</a>].",
                 transport_title: "Openbaar Vervoer & Treinen",
                 city_transport_head: "Stadsvervoer",
                 city_transport_body: "• <strong>Te voet:</strong> 15 min lopen naar het centrum.<br>• <strong>Tram:</strong> Halte <strong>Lemonnier</strong> op 400m (trappen, geen lift). 2 haltes naar centrum.<br>• <strong>Betalen:</strong> Contactloos betalen met bankkaart.",
                 train_travel_head: "Treinuitstappen (NMBS/SNCB)",
                 train_travel_body: "Koop tickets via de <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>NMBS-website</a> of de NMBS-app (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). Weekendtickets zijn voordeliger!",
                 train_times_head: "Directe reistijden vanaf Brussel-Zuid:",
+                parking_title: "Parkeren in de Buurt",
+                parking_sub: "Handige links en parkeermogelijkheden rondom het appartement:",
+                parking_app: "📱 <strong>Parkeer-app:</strong> Download <a href='https://www.easypark.com/en-be' target='_blank' class='underline text-teal-700 font-bold'>EasyPark</a> om op straat te betalen en tarieven te berekenen.",
+                parking_zones: "🗺️ <strong>Parkeerzones & Tarieven:</strong> Bekijk de zones rond Rue Brogniez 80A op de <a href='https://map.seety.co/Rue%20Brogniez%2080A,%201070%20Brussels/15?lang=nl' target='_blank' class='underline text-teal-700 font-bold'>Interactieve Seety Kaart ↗</a>.",
+                parking_search: "🔍 <strong>Parkeerplek Zoeken:</strong> Vergelijk op <a href='https://parclick.com' target='_blank' class='underline text-teal-700'>Parclick</a>, <a href='https://www.onepark.co' target='_blank' class='underline text-teal-700'>Onepark</a>, of <a href='https://www.myflexipark.be/en' target='_blank' class='underline text-teal-700'>MyFlexiPark</a>.",
+                parking_facilities_head: "🏢 Officiële Parkeergarages:",
+                parking_disabled: "♿ <strong>Mindervaliden Parkeren:</strong> Bekijk aangepaste plekken op de <a href='https://www.bruxelles.be/parking-handicap' target='_blank' class='underline text-teal-700 font-bold'>Brusselse Handicap Parkeerkaart ↗</a>.",
                 thermostat_title: "Verwarming & Thermostaat",
                 thermostat_intro: "Volledige toegang tot thermostaat. Ingesteld op 18.5°C tot 19°C.",
                 thermostat_eco: "🌱 <strong>Milieuvriendelijk:</strong> Houd op handmatig en blijf onder <strong>22°C</strong>.",
@@ -626,6 +772,7 @@
                 bins_title: "Afval Scheiden",
                 bins_intro: "Sorteer afval in de gekleurde bakken:",
                 bin_yellow: "Geel:", bin_blue: "Blauw:", bin_white: "Wit:", bin_glass: "Zwarte Mand:",
+                bins_schedule: "🚨 <strong>Lang verblijf / Vuilnis buiten zetten:</strong> Als u vuilnis buiten op straat moet zetten:<br>• <strong>Maandag na 18:00 uur:</strong> Alleen Blauwe (PMD) en Witte (restafval) zakken.<br>• <strong>Woensdag na 18:00 uur:</strong> Alleen Gele (papier/karton) en Witte (restafval) zakken.",
                 bins_extra: "🚨 Extra vuilniszakken in de lade boven de bakken.",
                 kitchen_title: "Keuken & Vaatwasser",
                 kitchen_body: "Vaatwasblokjes onder de gootsteen.",
@@ -649,6 +796,7 @@
                 step5_text: "Desça os pequenos degraus à direita. A porta pode estar destrancada na chegada.",
                 rules_title: "Regras da Casa",
                 rule_checkout: "<strong>Check-out:</strong> Horário limite às <strong>12:00 (Meio-dia)</strong>.",
+                rule_water: "🚰 <strong>Água da torneira:</strong> A água da torneira é 100% potável e segura para beber.",
                 rule_gate: "<strong>Segurança:</strong> Tranque o portão da rua com a chave <strong>após as 20:00</strong>.",
                 rule_nosmoking: "Estritamente <strong>proibido fumar dentro</strong>.",
                 rule_noise: "Mantenha o silêncio no pátio <strong>após as 22:00</strong>.",
@@ -657,14 +805,31 @@
                 findesiecle_title: "Restaurante Favorito: Fin de Siècle",
                 findesiecle_text: "Rue des Chartreux no centro. Sem reservas, mas a fila anda rápido. Excelente salada de queijo de cabra!",
                 okaycity_text: "Supermercado próximo altamente recomendado, ótimos preços e qualidade.",
+                delhaize_text: "<strong>Loja Proxy Delhaize:</strong> Pequeno supermercado logo na esquina (à direita ao sair do prédio). Produtos frescos e de qualidade, um pouco mais caro mas muito perto.",
                 marchemidi_text: "Grande mercado ao ar livre na Gare du Midi (Aos domingos até as 14:00).",
                 fleamarket_text: "Mercado de pulgas diário na Place du Jeu de Balle.",
+                airports_title: "Aeroportos e Como Chegar",
+                airports_sub: "Como chegar ao apartamento a partir dos aeroportos de Bruxelas:",
+                zaventem_title: "Aeroporto de Bruxelas-Zaventem (BRU)",
+                zaventem_train: "• <strong>Trem Direto:</strong> Leva ~20–30 min. Ida e volta ~€20–€23 (mais barato nos fins de semana).",
+                zaventem_taxi: "• <strong>Uber / Bolt:</strong> ~€35–€50 só ida, ~25–45 min dependendo do trânsito.",
+                charleroi_title: "Aeroporto de Bruxelas-Sul Charleroi (CRL)",
+                charleroi_flibco: "• <strong>Ônibus Flibco (Altamente recomendado):</strong> Direto para Gare du Midi. ~€16 até máx €20 só ida. Sai a cada 20 min, leva ~50–60 min. [<a href='https://www.flibco.com' target='_blank' class='underline text-teal-700 font-bold'>Reservar Flibco ↗</a>]",
+                charleroi_taxi: "• <strong>Uber / Bolt:</strong> ~€90–€130 só ida.",
+                charleroi_shuttle: "• <strong>Translado Privado Pré-reservado:</strong> ~€70–€100. Links para reservar: [<a href='https://transfers2airport.be' target='_blank' class='underline text-teal-700'>Transfers2Airport ↗</a>] ou [<a href='https://gettransfer.com' target='_blank' class='underline text-teal-700'>GetTransfer ↗</a>].",
                 transport_title: "Transporte e Trens",
                 city_transport_head: "Transporte Urbano",
                 city_transport_body: "• <strong>A pé:</strong> 15 min caminhando até o centro.<br>• <strong>Bonde:</strong> Parada <strong>Lemonnier</strong> a 400m (com degraus, sem elevador). 2 paradas até o centro.<br>• <strong>Pagamento:</strong> Pague diretamente com seu cartão bancário nos validadores.",
                 train_travel_head: "Viagens de Trem (SNCB)",
                 train_travel_body: "Compre bilhetes no <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>site da SNCB</a> ou no app da SNCB (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). Passagens de fim de semana têm desconto de ida e volta!",
                 train_times_head: "Tempos diretos a partir da Gare du Midi:",
+                parking_title: "Estacionamento Próximo",
+                parking_sub: "Links úteis e opções de estacionamento ao redor do imóvel:",
+                parking_app: "📱 <strong>App de Estacionamento:</strong> Baixe o <a href='https://www.easypark.com/en-be' target='_blank' class='underline text-teal-700 font-bold'>EasyPark</a> para pagar na rua e consultar tarifas.",
+                parking_zones: "🗺️ <strong>Zonas e Preços:</strong> Veja as zonas e tarifas na Rue Brogniez 80A no <a href='https://map.seety.co/Rue%20Brogniez%2080A,%201070%20Brussels/15?lang=en' target='_blank' class='underline text-teal-700 font-bold'>Mapa Interativo Seety ↗</a>.",
+                parking_search: "🔍 <strong>Pesquisar Vagas:</strong> Compare em <a href='https://parclick.com' target='_blank' class='underline text-teal-700'>Parclick</a>, <a href='https://www.onepark.co' target='_blank' class='underline text-teal-700'>Onepark</a>, ou <a href='https://www.myflexipark.be/en' target='_blank' class='underline text-teal-700'>MyFlexiPark</a>.",
+                parking_facilities_head: "🏢 Estacionamentos Cobertos Oficiais:",
+                parking_disabled: "♿ <strong>Vagas para Pessoas com Deficiência:</strong> Consulte no <a href='https://www.bruxelles.be/parking-handicap' target='_blank' class='underline text-teal-700 font-bold'>Mapa de Vagas Acessíveis de Bruxelas ↗</a>.",
                 thermostat_title: "Aquecimento e Termostato",
                 thermostat_intro: "Acesso total ao termostato. Ajustado entre 18.5°C e 19°C.",
                 thermostat_eco: "🌱 <strong>Ecológico:</strong> Mantenha no modo manual e tente não ultrapassar <strong>22°C</strong>.",
@@ -680,10 +845,11 @@
                 bins_title: "Reciclagem e Lixo",
                 bins_intro: "Por favor, separe o lixo nas lixeiras coloridas:",
                 bin_yellow: "Amarela:", bin_blue: "Azul:", bin_white: "Branca:", bin_glass: "Cesta Preta:",
+                bins_schedule: "🚨 <strong>Estadias longas / Colocar lixo fora:</strong> Se precisar colocar o lixo na rua:<br>• <strong>Segundas-feiras após as 18:00:</strong> Lixeiras Azuis (embalagens) e Brancas (comum).<br>• <strong>Quartas-feiras após as 18:00:</strong> Lixeiras Amarelas (papel/papelão) e Brancas (comum).",
                 bins_extra: "🚨 Sacos extras na gaveta acima das lixeiras.",
                 kitchen_title: "Cozinha e Lava-louças",
                 kitchen_body: "Pastilhas e detergente embaixo da pia.",
-                checkout_title: "Instruções de Saída",
+                checkout_title: "Instrucciones de Saída",
                 checkout_intro: "Check-out às <strong>12:00 (Meio-dia)</strong>. Antes de sair:",
                 checkout_list: "<li>🌡️ Baixar aquecimento para <strong>18°C</strong>.</li><li>🧼 Não deixar louça suja.</li><li>🛁 Colocar toalhas usadas na banheira.</li><li>🔒 Trancar a porta e guardar as chaves no cofre externo.</li>",
                 checkout_thanks: "Obrigado pela visita e boa viagem de volta! 👋"
