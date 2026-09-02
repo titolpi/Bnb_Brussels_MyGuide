@@ -22,20 +22,23 @@
     <div class="bg-teal-800 text-white py-2.5 px-4 sticky top-0 z-40 shadow-md">
         <div class="max-w-md mx-auto flex items-center justify-between text-xs font-semibold">
             <span class="text-teal-200 uppercase tracking-wider text-[10px]">Language:</span>
-            <div class="flex items-center space-x-1.5">
-                <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+            <div class="flex items-center space-x-1">
+                <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active px-1.5 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
                     <span>🇬🇧</span> <span>EN</span>
                 </button>
-                <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn px-1.5 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
                     <span>🇫🇷</span> <span>FR</span>
                 </button>
-                <button onclick="setLanguage('es')" id="btn-es" class="lang-btn px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                <button onclick="setLanguage('de')" id="btn-de" class="lang-btn px-1.5 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                    <span>🇩🇪</span> <span>DE</span>
+                </button>
+                <button onclick="setLanguage('es')" id="btn-es" class="lang-btn px-1.5 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
                     <span>🇪🇸</span> <span>ES</span>
                 </button>
-                <button onclick="setLanguage('nl')" id="btn-nl" class="lang-btn px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                <button onclick="setLanguage('nl')" id="btn-nl" class="lang-btn px-1.5 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
                     <span>🇳🇱</span> <span>NL</span>
                 </button>
-                <button onclick="setLanguage('pt')" id="btn-pt" class="lang-btn px-2 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
+                <button onclick="setLanguage('pt')" id="btn-pt" class="lang-btn px-1.5 py-1 rounded-lg border border-transparent transition-all flex items-center space-x-1 hover:bg-teal-700">
                     <span>🇵🇹</span> <span>PT</span>
                 </button>
             </div>
@@ -409,9 +412,7 @@
                     </div>
                 </div>
                 <div class="bg-amber-50 border border-amber-200 p-3 rounded-xl text-xs text-amber-950 font-medium" data-i18n="bins_schedule">
-                    🚨 <strong>Long-Term Stays / Waste Collection:</strong> If you need to take bins out to the street:<br>
-                    • <strong>Mondays after 6:00 PM:</strong> Blue (PMD) and White (residual) bins only.<br>
-                    • <strong>Wednesdays after 6:00 PM:</strong> Yellow (paper/cardboard) and White (residual) bins only.
+                    🚨 <strong>Long-Term Stays / Waste Collection:</strong> If you need to take bins out to the street:<br>• <strong>Mondays after 6:00 PM:</strong> Blue (PMD) and White (residual) bins only.<br>• <strong>Wednesdays after 6:00 PM:</strong> Yellow (paper/cardboard) and White (residual) bins only.
                 </div>
                 <div class="bg-slate-100 p-3 rounded-xl space-y-1 border border-slate-100 text-xs mt-2" data-i18n="bins_extra">
                     🚨 Extra bin bags are stored in drawer above bins.
@@ -634,6 +635,79 @@
                 checkout_intro: "Le départ se fait à <strong>12:00 (Midi)</strong>. Avant de partir, merci de:",
                 checkout_list: "<li>🌡️ Régler le chauffage sur <strong>18°C</strong>.</li><li>🧼 Ne pas laisser de vaisselle sale.</li><li>🛁 Mettre les serviettes usagées dans la baignoire.</li><li>🔒 Verrouiller la porte & remettre les clés dans la boîte murale.</li>",
                 checkout_thanks: "Merci de votre séjour et bon voyage retour! 👋"
+            },
+            de: {
+                welcome_title: "Willkommen in Brüssel! 🇧🇪",
+                welcome_sub: "Ihr interaktiver Reiseführer nahe dem Bahnhof Gare du Midi. Tippen Sie auf einen Bereich zum Öffnen.",
+                wifi_title: "Schnelles & Kostenloses WLAN",
+                wifi_networks: "Netzwerke:",
+                wifi_password: "Passwort:",
+                checkin_title: "Anreise & Check-in",
+                step1_text: "Sie haben Ihr Ziel in der Hausnummer 80A erreicht.",
+                step2_text: "Wenn ich vor Ort bin, klingeln Sie bitte bei der blau eingekreisten Klingel (Olivier Pirard / Bayane). Ansonsten klingeln Sie beim Apartment in gelb (DAVID DRESE).",
+                step3_text: "Wenn ich Sie nicht persönlich empfange, finden Sie Ihre Schlüssel im Schlüsselsafe an der Wand. Der Code wurde Ihnen per Airbnb-/Booking-Nachricht gesendet.",
+                key_guide: "🔑 <strong>Schlüssel-Info:</strong> Der kleine Schlüssel öffnet das schwarze Haupttor an der Straße. Der größere Schlüssel ist für die Wohnungstür.",
+                step4_text: "Gehen Sie durch das Haupttor an der Straße, betreten Sie den Innenhof und folgen Sie dem Pfeil.",
+                step5_text: "Gehen Sie rechts die kurzen Stufen hinunter zu Ihrem privaten Eingang. Die Tür könnte bei Ihrer Ankunft bereits aufgeschlossen sein.",
+                rules_title: "Hausregeln & Logistik",
+                rule_checkout: "<strong>Check-out:</strong> Regulärer Check-out ist um <strong>12:00 Uhr (Mittag)</strong>.",
+                rule_water: "🚰 <strong>Leitungswasser:</strong> Das Leitungswasser ist zu 100 % sicher und bedenkenlos trinkbar.",
+                rule_gate: "<strong>Torsicherheit:</strong> Bitte schließen Sie das Haupttor an der Straße <strong>nach 20:00 Uhr</strong> mit dem Schlüssel ab.",
+                rule_nosmoking: "Striktes <strong>Rauchverbot in der Wohnung</strong>. Bitte schließen Sie die Türen, wenn Sie draußen rauchen.",
+                rule_noise: "Bitte halten Sie den Lärm besonders im Innenhof <strong>nach 22:00 Uhr</strong> auf ein Minimum.",
+                tips_title: "Lokale Tipps & Gespeicherte Karten",
+                tips_sub: "Tippen Sie auf eine Liste, um sie direkt in Google Maps zu öffnen:",
+                findesiecle_title: "Lieblingsrestaurant: Fin de Siècle",
+                findesiecle_text: "Rue des Chartreux im Zentrum. Keine Reservierungen möglich, aber die Schlange bewegt sich schnell (max. 10–30 Min. Wartezeit). Nettes Personal. Hervorragender Ziegenkäsesalat für Vegetarier!",
+                okaycity_text: "Sehr empfehlenswert in der Nähe für gute Preise und Qualitätsprodukte.",
+                delhaize_text: "<strong>Proxy Delhaize Supermarkt:</strong> Kleiner Supermarkt gleich um die Ecke (nach dem Hinaustreten rechts). Frische Qualitätsprodukte, etwas teurer, aber sehr nah.",
+                marchemidi_text: "Riesiger Freiluftmarkt rund um den Bahnhof Gare du Midi (jeden Sonntag bis 14:00 Uhr).",
+                fleamarket_text: "Täglicher Vintage-Flohmarkt am Place du Jeu de Balle.",
+                airports_title: "Flughäfen & Anreise",
+                airports_sub: "So erreichen Sie die Wohnung von den Brüsseler Flughäfen:",
+                zaventem_title: "Flughafen Brüssel-Zaventem (BRU)",
+                zaventem_train: "• <strong>Direktzug:</strong> Dauert ~20–30 Min. Hin- und Rückfahrt kostet ~20 €–23 € (am Wochenende günstiger).",
+                zaventem_taxi: "• <strong>Uber / Bolt:</strong> ~35 €–50 € pro Strecke, ~25–45 Min. je nach Verkehrslage.",
+                charleroi_title: "Flughafen Brüssel-Charleroi (CRL)",
+                charleroi_flibco: "• <strong>Flibco Shuttlebus (Dringend empfohlen):</strong> Direkt zum Bahnhof Gare du Midi. Kostet ~16 € bis max. 20 € pro Strecke. Fährt alle 20 Min., Dauer ~50–60 Min. [<a href='https://www.flibco.com' target='_blank' class='underline text-teal-700 font-bold'>Flibco Bus Buchen ↗</a>]",
+                charleroi_taxi: "• <strong>Uber / Bolt:</strong> ~90 €–130 € pro Strecke.",
+                charleroi_shuttle: "• <strong>Vorgebuchter privater Shuttle:</strong> ~70 €–100 €. Nützliche Links zum Buchen: [<a href='https://transfers2airport.be' target='_blank' class='underline text-teal-700'>Transfers2Airport ↗</a>] oder [<a href='https://gettransfer.com' target='_blank' class='underline text-teal-700'>GetTransfer ↗</a>].",
+                transport_title: "Unterwegs & Zugverbindungen",
+                city_transport_head: "Lokaler Nahverkehr",
+                city_transport_body: "• <strong>Zu Fuß:</strong> Bequemer 15-minütiger Spaziergang ins Stadtzentrum.<br>• <strong>Straßenbahn:</strong> Haltestelle <strong>Lemonnier</strong> ist 400 m entfernt (einige Stufen, kein Aufzug). Direkt 2 Haltestellen ins Zentrum.<br>• <strong>Bezahlung:</strong> Halten Sie Ihre Bankkarte direkt an die Entwerter (Tageshöchstpreis wird automatisch gedeckelt). MOBIB-Karten sind am Schalter im Gare du Midi (Ebene -1) erhältlich.",
+                train_travel_head: "Tagesausflüge mit dem Zug (SNCB)",
+                train_travel_body: "Kaufen Sie Tickets über die <a href='https://www.belgiantrain.be/' target='_blank' class='text-teal-700 underline font-bold'>SNCB-Website</a> oder die SNCB-App (<a href='https://apps.apple.com/us/app/sncb-nmbs-timetable-tickets/id1504870215' target='_blank' class='text-teal-700 underline font-bold'>iOS App Store</a> / <a href='https://play.google.com/store/apps/details?id=be.sncbnmbs.b2cmobapp' target='_blank' class='text-teal-700 underline font-bold'>Android Play Store</a>). Hin- und Rückfahrkarten am Wochenende sind günstiger! Achten Sie auf den Unterschied zwischen IC-Expresszügen und langsamen L-Regionalzügen.",
+                train_times_head: "Direkte Zugverbindungen ab Gare du Midi:",
+                parking_title: "Parken in der Nähe",
+                parking_sub: "Nützliche Links und Parkmöglichkeiten rund um die Unterkunft:",
+                parking_app: "📱 <strong>Straßenpark-App:</strong> Laden Sie <a href='https://www.easypark.com/en-be' target='_blank' class='underline text-teal-700 font-bold'>EasyPark</a> herunter, um Parkgebühren auf der Straße zu bezahlen und Preise vorab zu berechnen.",
+                parking_zones: "🗺️ <strong>Interaktive Zonen & Tarife:</strong> Prüfen Sie Parkzonen und Preise für die Rue Brogniez 80A auf der <a href='https://map.seety.co/Rue%20Brogniez%2080A,%201070%20Brussels/15?lang=de' target='_blank' class='underline text-teal-700 font-bold'>Interaktiven Seety-Karte ↗</a>.",
+                parking_search: "🔍 <strong>Parkplatz Suchen & Reservieren:</strong> Vergleichen Sie Optionen auf <a href='https://parclick.com' target='_blank' class='underline text-teal-700'>Parclick</a>, <a href='https://www.onepark.co' target='_blank' class='underline text-teal-700'>Onepark</a> oder <a href='https://www.myflexipark.be/en' target='_blank' class='underline text-teal-700'>MyFlexiPark</a>.",
+                parking_facilities_head: "🏢 Offizielle Parkhäuser:",
+                parking_disabled: "♿ <strong>Behindertenparkplätze:</strong> Finden Sie barrierefreie Parkplätze auf der <a href='https://www.bruxelles.be/parking-handicap' target='_blank' class='underline text-teal-700 font-bold'>Behindertenparkplatz-Karte Brüssel ↗</a>.",
+                thermostat_title: "Heizung & Thermostat",
+                thermostat_intro: "Voller Zugriff auf die Heizungseinstellung. Bei Ankunft auf 18,5 °C bis 19 °C eingestellt.",
+                thermostat_eco: "🌱 <strong>Umweltfreundlich:</strong> Bitte auf manueller Einstellung belassen und versuchen, <strong>22 °C</strong> nicht zu überschreiten.",
+                thermostat_how: "Temperatur ändern:",
+                thermostat_steps: "<li>Bestätigen Sie, dass 'man' auf dem Bildschirm angezeigt wird.</li><li>Drehen Sie am mittleren Wählrad zur gewünschten Temperatur.</li><li>Drücken Sie das Rad nach innen, um zu bestätigen.</li>",
+                door_title: "Wohnungstür Schließen & Abschließen",
+                door_intro: "So schließen Sie die Glas-Schiebetür vor dem Abschließen richtig:",
+                door_steps: "<li>Drücken Sie den Griff ganz nach unten und schieben Sie die Tür zu.</li><li>Ziehen Sie den Griff wieder ganz nach oben, während Sie die Tür zu sich heranziehen.</li><li>Achten Sie auf ein leises <strong>'Klick'-Geräusch</strong>, das das Abdichten bestätigt.</li>",
+                door_outro: "Sobald es geklickt hat, schließen Sie die Tür mit dem Schlüssel ab.",
+                dehumidifier_title: "Luftentfeuchter-Steuerung",
+                dehumidifier_intro: "Läuft automatisch. Kann bei störendem Lüftergeräusch ausgeschaltet werden; speichert Einstellungen beim Wiedereinschalten.",
+                dehumidifier_alert: "🚨 <strong>Wasserbehälter voll:</strong> Wenn voll, schaltet er sich ab und leuchtet rot. Ziehen Sie den unteren Behälter heraus, leeren Sie das Wasser im Waschbecken und schieben Sie ihn fest zurück.",
+                bins_title: "Mülltrennung & Tonnen",
+                bins_intro: "Bitte trennen Sie den Müll sorgfältig nach Farben:",
+                bin_yellow: "Gelb:", bin_blue: "Blau:", bin_white: "Weiß:", bin_glass: "Schwarzer Korb:",
+                bins_schedule: "🚨 <strong>Langzeitaufenthalte / Müllabfuhr:</strong> Wenn Sie Müllsäcke auf die Straße stellen müssen:<br>• <strong>Montags nach 18:00 Uhr:</strong> Nur blaue (PMD) und weiße (Restmüll) Säcke.<br>• <strong>Mittwochs nach 18:00 Uhr:</strong> Nur gelbe (Papier/Pappe) und weiße (Restmüll) Säcke.",
+                bins_extra: "🚨 Zusätzliche Müllsäcke befinden sich in der Schublade über den Mülleimern.",
+                kitchen_title: "Küche & Spülmaschine",
+                kitchen_body: "Spülmaschinentabs und Spülmittel befinden sich unter der Spüle. Füllen Sie den Spülmittelspender bei Bedarf gerne auf!",
+                checkout_title: "Check-out-Schritte",
+                checkout_intro: "Check-out ist um <strong>12:00 Uhr (Mittag)</strong>. Bitte vor der Abreise:",
+                checkout_list: "<li>🌡️ Heizung auf <strong>18 °C</strong> herunterdrehen.</li><li>🧼 Kein schmutziges Geschirr zurücklassen.</li><li>🛁 Benutzte Handtücher in die Badewanne legen.</li><li>🔒 Wohnungstür abschließen & Schlüssel zurück in den Schlüsselsafe draußen legen.</li>",
+                checkout_thanks: "Vielen Dank für Ihren Aufenthalt und gute Heimreise! 👋"
             },
             es: {
                 welcome_title: "¡Bienvenido a Bruselas! 🇧🇪",
